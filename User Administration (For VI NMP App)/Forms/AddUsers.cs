@@ -12,9 +12,13 @@ namespace User_Administration__For_VI_NMP_App_.Forms
 {
     public partial class AddUsers : Form
     {
-        public AddUsers()
+        MySQLDatabase mySQLDatabase;
+
+        public AddUsers(MySQLDatabase MySQLDatabase)
         {
             InitializeComponent();
+
+            mySQLDatabase = MySQLDatabase;
 
             Translator.LanguageChanged += Translate;
         }
@@ -24,8 +28,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             if (Translator.Language == Language.CZ)
             {
                 Text =                          "Přidání Uživatele";
-                lblTextDatabasePath.Text =      "Cesta k Databázi";
-                btnBrowseDBPath.Text =          "Procházet";
                 lblTextUserName.Text =          "Uživatelské Jméno";
                 lblTextPassword.Text =          "Heslo";
                 lblTextConfirmPassword.Text =   "Potvrzení Hesla";
@@ -37,8 +39,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             else if (Translator.Language == Language.ENG)
             {
                 Text =                          "Add Users";
-                lblTextDatabasePath.Text =      "Databaze Path";
-                btnBrowseDBPath.Text =          "Browse";
                 lblTextUserName.Text =          "User Name";
                 lblTextPassword.Text =          "Password";
                 lblTextConfirmPassword.Text =   "Confirm Password";

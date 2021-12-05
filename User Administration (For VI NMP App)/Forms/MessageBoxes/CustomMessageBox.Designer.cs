@@ -97,21 +97,24 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             // 
             // panel2
             // 
+            this.panel2.AutoSize = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblInfoText);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(400, 263);
+            this.panel2.Size = new System.Drawing.Size(400, 113);
             this.panel2.TabIndex = 2;
             // 
             // lblInfoText
             // 
-            this.lblInfoText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblInfoText.AutoEllipsis = true;
+            this.lblInfoText.AutoSize = true;
             this.lblInfoText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblInfoText.Location = new System.Drawing.Point(0, 0);
+            this.lblInfoText.Location = new System.Drawing.Point(10, 10);
+            this.lblInfoText.MaximumSize = new System.Drawing.Size(1500, 900);
             this.lblInfoText.Name = "lblInfoText";
-            this.lblInfoText.Size = new System.Drawing.Size(398, 261);
+            this.lblInfoText.Size = new System.Drawing.Size(36, 21);
             this.lblInfoText.TabIndex = 1;
             this.lblInfoText.Text = "Text";
             this.lblInfoText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,8 +123,9 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Indigo;
-            this.ClientSize = new System.Drawing.Size(400, 300);
+            this.ClientSize = new System.Drawing.Size(400, 150);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
@@ -133,7 +137,9 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

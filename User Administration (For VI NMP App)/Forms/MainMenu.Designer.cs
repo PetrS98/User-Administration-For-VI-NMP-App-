@@ -37,7 +37,6 @@ namespace User_Administration__For_VI_NMP_App_
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.p0 = new System.Windows.Forms.Panel();
             this.p3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.p2 = new System.Windows.Forms.Panel();
             this.p1 = new System.Windows.Forms.Panel();
             this.pagePanel = new System.Windows.Forms.Panel();
@@ -83,9 +82,9 @@ namespace User_Administration__For_VI_NMP_App_
             this.btnCreateDatabase.Name = "btnCreateDatabase";
             this.btnCreateDatabase.Size = new System.Drawing.Size(295, 61);
             this.btnCreateDatabase.TabIndex = 1;
-            this.btnCreateDatabase.Text = "Create Database";
+            this.btnCreateDatabase.Text = "Connect to Database";
             this.btnCreateDatabase.UseVisualStyleBackColor = false;
-            this.btnCreateDatabase.Click += new System.EventHandler(this.btnCreateDatabase_Click);
+            this.btnCreateDatabase.Click += new System.EventHandler(this.btnConnectToDatabase_Click);
             // 
             // btnAddUser
             // 
@@ -167,7 +166,6 @@ namespace User_Administration__For_VI_NMP_App_
             // p3
             // 
             this.p3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.p3.Controls.Add(this.button1);
             this.p3.Controls.Add(this.btnDeleteUser);
             this.p3.Controls.Add(this.btnEditUser);
             this.p3.Controls.Add(this.btnAddUser);
@@ -177,16 +175,6 @@ namespace User_Administration__For_VI_NMP_App_
             this.p3.Name = "p3";
             this.p3.Size = new System.Drawing.Size(295, 586);
             this.p3.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(103, 441);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // p2
             // 
@@ -210,6 +198,7 @@ namespace User_Administration__For_VI_NMP_App_
             // 
             // pagePanel
             // 
+            this.pagePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.pagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pagePanel.Location = new System.Drawing.Point(297, 37);
@@ -343,7 +332,6 @@ namespace User_Administration__For_VI_NMP_App_
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pbIcon;
-        private System.Windows.Forms.Button button1;
     }
 }
 

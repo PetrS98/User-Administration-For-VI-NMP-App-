@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.12" />
+    <PackageReference Include="MySqlConnector" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UserControl\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="VisualInspection.Utils">
+      <HintPath>bin\Debug\netcoreapp3.1\VisualInspection.Utils.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

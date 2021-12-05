@@ -18,7 +18,9 @@ namespace User_Administration__For_VI_NMP_App_
         private readonly Color SELECTED_BUTTON_COLOR = Color.FromArgb(128, 0, 128);
         private readonly Color DEFAULT_BUTTON_COLOR = Color.FromArgb(64,64,64);
 
-        private NewDatabase newDatabase;
+        private MySQLDatabase mySQLDatabase = new MySQLDatabase();
+
+        private ConnectToDatabase connectToDatabase;
         private AddUsers addUsers;
         private DeleteUsers deleteUsers;
         private EditUsers editUsers;
@@ -65,17 +67,19 @@ namespace User_Administration__For_VI_NMP_App_
         public MainMenu()
         {
             InitializeComponent();
-
+            CustomMessageBox_Yes_No.ShowPopup("asdlůfijk", "asdfsadf");
             Translator.LanguageChanged += Translate;
 
-            newDatabase = new NewDatabase();
-            addUsers = new AddUsers();
-            deleteUsers = new DeleteUsers();
-            editUsers = new EditUsers();
+            connectToDatabase = new ConnectToDatabase(mySQLDatabase);
+            addUsers = new AddUsers(mySQLDatabase);
+            deleteUsers = new DeleteUsers(mySQLDatabase);
+            editUsers = new EditUsers(mySQLDatabase);
 
-            newDatabase.TopLevel = false;
-            newDatabase.Dock = DockStyle.Fill;
-            pagePanel.Controls.Add(newDatabase);
+            connectToDatabase.clientStatusDot1.Client = mySQLDatabase;
+
+            connectToDatabase.TopLevel = false;
+            connectToDatabase.Dock = DockStyle.Fill;
+            pagePanel.Controls.Add(connectToDatabase);
 
             addUsers.TopLevel = false;
             addUsers.Dock = DockStyle.Fill;
@@ -88,6 +92,8 @@ namespace User_Administration__For_VI_NMP_App_
             editUsers.TopLevel = false;
             editUsers.Dock = DockStyle.Fill;
             pagePanel.Controls.Add(editUsers);
+
+            Translator.Language = Language.ENG;
         }
 
         private void Translate(object sender, Language e)
@@ -96,7 +102,7 @@ namespace User_Administration__For_VI_NMP_App_
             {
                 Text =                      "Administrace Databáze Uživatelů";
                 lblTitle.Text =             "Administrace Databáze Uživatelů";
-                btnCreateDatabase.Text =    "Vytvoření Databáze";
+                btnCreateDatabase.Text =    "Připojení k Databázi";
                 btnAddUser.Text =           "Přidání Uživatele";
                 btnEditUser.Text =          "Editace Uživatele";
                 btnDeleteUser.Text =        "Smazání Uživatele";
@@ -105,7 +111,7 @@ namespace User_Administration__For_VI_NMP_App_
             {
                 Text =                      "User Database Administration";
                 lblTitle.Text =             "User Database Administration";
-                btnCreateDatabase.Text =    "Create Database";
+                btnCreateDatabase.Text =    "Connect to Database";
                 btnAddUser.Text =           "Add User";
                 btnEditUser.Text =          "Edit User";
                 btnDeleteUser.Text =        "Delete User";
@@ -129,10 +135,10 @@ namespace User_Administration__For_VI_NMP_App_
             }
         }
 
-        private void btnCreateDatabase_Click(object sender, EventArgs e)
+        private void btnConnectToDatabase_Click(object sender, EventArgs e)
         {
             ActiveButton = sender as Button;
-            ActivePage = newDatabase;
+            ActivePage = connectToDatabase;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -176,22 +182,6 @@ namespace User_Administration__For_VI_NMP_App_
         private void lblTitle_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CustomMessageBox.ShowPopup("fdhgvhfadfvc", "ajhbsdfhjbdihjfbvijhbdnfjhvbibwneidjhbvncihjwebdsnvcbnwsebcnvbhdjsevcwbnsvcbnwsehjvcbnhjwds");
-
-            var tmp = CustomMessageBox_Yes_No.ShowPopup("jdvnjsefnvjnaev", "iooiuuioj545454554");
-
-            if(tmp == DialogResult.Yes)
-            {
-                CustomMessageBox.ShowPopup("Yes", "");
-            }
-            else if(tmp == DialogResult.No)
-            {
-                CustomMessageBox.ShowPopup("No", "");
-            }
         }
     }
 }

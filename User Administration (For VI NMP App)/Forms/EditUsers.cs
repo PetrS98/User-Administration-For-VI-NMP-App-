@@ -12,9 +12,13 @@ namespace User_Administration__For_VI_NMP_App_.Forms
 {
     public partial class EditUsers : Form
     {
-        public EditUsers()
+        MySQLDatabase mySQLDatabase;
+
+        public EditUsers(MySQLDatabase MySQLDatabase)
         {
             InitializeComponent();
+
+            mySQLDatabase = MySQLDatabase;
 
             Translator.LanguageChanged += Translate;
         }
@@ -24,8 +28,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             if (Translator.Language == Language.CZ)
             {
                 Text =                          "Smazání Uživatele";
-                lblTextDatabasePath.Text =      "Cesta k Databázi";
-                btnBrowseDBPath.Text =          "Procházet";
                 lblTextUserList.Text =          "Seznam Uživatelů";
                 lblTextUserName.Text =          "Uživatelské Jméno";
                 lblTextPassword.Text =          "Heslo";
@@ -38,8 +40,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             else if (Translator.Language == Language.ENG)
             {
                 Text =                          "Delete Users";
-                lblTextDatabasePath.Text =      "Databaze Path";
-                btnBrowseDBPath.Text =          "Browse";
                 lblTextUserList.Text =          "Users List";
                 lblTextUserName.Text =          "User Name";
                 lblTextPassword.Text =          "Password";

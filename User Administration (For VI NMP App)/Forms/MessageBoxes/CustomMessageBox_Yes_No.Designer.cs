@@ -34,17 +34,19 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.p3 = new System.Windows.Forms.Panel();
-            this.p5 = new System.Windows.Forms.Panel();
-            this.btnNo = new System.Windows.Forms.Button();
             this.p4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNo = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnYes = new System.Windows.Forms.Button();
             this.p2 = new System.Windows.Forms.Panel();
             this.lblInfoText = new System.Windows.Forms.Label();
             this.p0.SuspendLayout();
             this.p1.SuspendLayout();
             this.p3.SuspendLayout();
-            this.p5.SuspendLayout();
             this.p4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.p2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,29 +107,39 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             // 
             // p3
             // 
-            this.p3.Controls.Add(this.p5);
             this.p3.Controls.Add(this.p4);
             this.p3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.p3.Location = new System.Drawing.Point(0, 300);
+            this.p3.Location = new System.Drawing.Point(0, 74);
             this.p3.Name = "p3";
-            this.p3.Size = new System.Drawing.Size(400, 37);
+            this.p3.Size = new System.Drawing.Size(398, 37);
             this.p3.TabIndex = 3;
             // 
-            // p5
+            // p4
             // 
-            this.p5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p5.Controls.Add(this.btnNo);
-            this.p5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.p5.Location = new System.Drawing.Point(200, 0);
-            this.p5.Name = "p5";
-            this.p5.Size = new System.Drawing.Size(200, 37);
-            this.p5.TabIndex = 1;
+            this.p4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.p4.Controls.Add(this.panel2);
+            this.p4.Controls.Add(this.panel1);
+            this.p4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.p4.Location = new System.Drawing.Point(138, 0);
+            this.p4.Name = "p4";
+            this.p4.Size = new System.Drawing.Size(260, 37);
+            this.p4.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnNo);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(129, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(129, 35);
+            this.panel2.TabIndex = 2;
             // 
             // btnNo
             // 
             this.btnNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnNo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnNo.FlatAppearance.BorderSize = 0;
             this.btnNo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
@@ -136,26 +148,26 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             this.btnNo.ForeColor = System.Drawing.Color.White;
             this.btnNo.Location = new System.Drawing.Point(0, 0);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(198, 37);
+            this.btnNo.Size = new System.Drawing.Size(127, 33);
             this.btnNo.TabIndex = 5;
             this.btnNo.Text = "No";
             this.btnNo.UseVisualStyleBackColor = false;
             // 
-            // p4
+            // panel1
             // 
-            this.p4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p4.Controls.Add(this.btnYes);
-            this.p4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.p4.Location = new System.Drawing.Point(0, 0);
-            this.p4.Name = "p4";
-            this.p4.Size = new System.Drawing.Size(200, 37);
-            this.p4.TabIndex = 0;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnYes);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(129, 35);
+            this.panel1.TabIndex = 1;
             // 
             // btnYes
             // 
             this.btnYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnYes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnYes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnYes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnYes.FlatAppearance.BorderSize = 0;
             this.btnYes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
@@ -164,28 +176,31 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             this.btnYes.ForeColor = System.Drawing.Color.White;
             this.btnYes.Location = new System.Drawing.Point(0, 0);
             this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(198, 37);
+            this.btnYes.Size = new System.Drawing.Size(127, 33);
             this.btnYes.TabIndex = 4;
             this.btnYes.Text = "Yes";
             this.btnYes.UseVisualStyleBackColor = false;
             // 
             // p2
             // 
+            this.p2.AutoSize = true;
             this.p2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.p2.Controls.Add(this.lblInfoText);
+            this.p2.Controls.Add(this.p3);
             this.p2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.p2.Location = new System.Drawing.Point(0, 37);
             this.p2.Name = "p2";
-            this.p2.Size = new System.Drawing.Size(400, 263);
+            this.p2.Size = new System.Drawing.Size(400, 113);
             this.p2.TabIndex = 4;
             // 
             // lblInfoText
             // 
-            this.lblInfoText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblInfoText.AutoSize = true;
             this.lblInfoText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblInfoText.Location = new System.Drawing.Point(0, 0);
+            this.lblInfoText.Location = new System.Drawing.Point(10, 10);
+            this.lblInfoText.MaximumSize = new System.Drawing.Size(1500, 900);
             this.lblInfoText.Name = "lblInfoText";
-            this.lblInfoText.Size = new System.Drawing.Size(398, 261);
+            this.lblInfoText.Size = new System.Drawing.Size(36, 21);
             this.lblInfoText.TabIndex = 3;
             this.lblInfoText.Text = "Text";
             this.lblInfoText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,10 +209,10 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Indigo;
-            this.ClientSize = new System.Drawing.Size(400, 337);
+            this.ClientSize = new System.Drawing.Size(400, 150);
             this.Controls.Add(this.p2);
-            this.Controls.Add(this.p3);
             this.Controls.Add(this.p0);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -208,10 +223,13 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             this.p0.ResumeLayout(false);
             this.p1.ResumeLayout(false);
             this.p3.ResumeLayout(false);
-            this.p5.ResumeLayout(false);
             this.p4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.p2.ResumeLayout(false);
+            this.p2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -222,11 +240,12 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
         private System.Windows.Forms.Panel p1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel p3;
-        private System.Windows.Forms.Panel p5;
         private System.Windows.Forms.Panel p4;
         private System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.Button btnYes;
         private System.Windows.Forms.Panel p2;
         private System.Windows.Forms.Label lblInfoText;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

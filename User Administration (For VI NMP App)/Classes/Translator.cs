@@ -19,9 +19,8 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             }
             set
             {
-                bool changed = language != value;
                 language = value;
-                if (changed) LanguageChanged?.Invoke(null, value);
+                LanguageChanged?.Invoke(null, value);
             }
         }
 

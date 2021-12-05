@@ -29,9 +29,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDBPath = new System.Windows.Forms.Label();
-            this.lblTextDatabasePath = new System.Windows.Forms.Label();
-            this.btnBrowseDBPath = new System.Windows.Forms.Button();
             this.lbUsersList = new System.Windows.Forms.ListBox();
             this.lblTextUserPermissions = new System.Windows.Forms.Label();
             this.lblTextPermissionsList = new System.Windows.Forms.Label();
@@ -49,55 +46,22 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnClearParameters = new System.Windows.Forms.Button();
             this.btnSaveUser = new System.Windows.Forms.Button();
             this.lblTextUserList = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblDBPath
-            // 
-            this.lblDBPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDBPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDBPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDBPath.ForeColor = System.Drawing.Color.Silver;
-            this.lblDBPath.Location = new System.Drawing.Point(112, 36);
-            this.lblDBPath.Name = "lblDBPath";
-            this.lblDBPath.Size = new System.Drawing.Size(315, 20);
-            this.lblDBPath.TabIndex = 32;
-            this.lblDBPath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblTextDatabasePath
-            // 
-            this.lblTextDatabasePath.AutoSize = true;
-            this.lblTextDatabasePath.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextDatabasePath.ForeColor = System.Drawing.Color.White;
-            this.lblTextDatabasePath.Location = new System.Drawing.Point(9, 6);
-            this.lblTextDatabasePath.Name = "lblTextDatabasePath";
-            this.lblTextDatabasePath.Size = new System.Drawing.Size(110, 20);
-            this.lblTextDatabasePath.TabIndex = 31;
-            this.lblTextDatabasePath.Text = "Database Path";
-            // 
-            // btnBrowseDBPath
-            // 
-            this.btnBrowseDBPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBrowseDBPath.FlatAppearance.BorderSize = 0;
-            this.btnBrowseDBPath.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnBrowseDBPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowseDBPath.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBrowseDBPath.ForeColor = System.Drawing.Color.White;
-            this.btnBrowseDBPath.Location = new System.Drawing.Point(12, 29);
-            this.btnBrowseDBPath.Name = "btnBrowseDBPath";
-            this.btnBrowseDBPath.Size = new System.Drawing.Size(86, 33);
-            this.btnBrowseDBPath.TabIndex = 30;
-            this.btnBrowseDBPath.Text = "Browse";
-            this.btnBrowseDBPath.UseVisualStyleBackColor = false;
-            // 
             // lbUsersList
             // 
-            this.lbUsersList.BackColor = System.Drawing.Color.Gray;
+            this.lbUsersList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbUsersList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbUsersList.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbUsersList.ForeColor = System.Drawing.Color.White;
             this.lbUsersList.FormattingEnabled = true;
-            this.lbUsersList.ItemHeight = 15;
-            this.lbUsersList.Location = new System.Drawing.Point(85, 107);
+            this.lbUsersList.ItemHeight = 20;
+            this.lbUsersList.Location = new System.Drawing.Point(12, 63);
             this.lbUsersList.Name = "lbUsersList";
-            this.lbUsersList.Size = new System.Drawing.Size(269, 184);
+            this.lbUsersList.Size = new System.Drawing.Size(416, 280);
             this.lbUsersList.TabIndex = 33;
             // 
             // lblTextUserPermissions
@@ -105,7 +69,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lblTextUserPermissions.AutoSize = true;
             this.lblTextUserPermissions.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTextUserPermissions.ForeColor = System.Drawing.Color.White;
-            this.lblTextUserPermissions.Location = new System.Drawing.Point(243, 534);
+            this.lblTextUserPermissions.Location = new System.Drawing.Point(243, 549);
             this.lblTextUserPermissions.Name = "lblTextUserPermissions";
             this.lblTextUserPermissions.Size = new System.Drawing.Size(129, 20);
             this.lblTextUserPermissions.TabIndex = 42;
@@ -116,7 +80,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lblTextPermissionsList.AutoSize = true;
             this.lblTextPermissionsList.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTextPermissionsList.ForeColor = System.Drawing.Color.White;
-            this.lblTextPermissionsList.Location = new System.Drawing.Point(12, 534);
+            this.lblTextPermissionsList.Location = new System.Drawing.Point(12, 549);
             this.lblTextPermissionsList.Name = "lblTextPermissionsList";
             this.lblTextPermissionsList.Size = new System.Drawing.Size(122, 20);
             this.lblTextPermissionsList.TabIndex = 41;
@@ -132,7 +96,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.tableLayoutPanel1.Controls.Add(this.tbUserName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbPassword, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tbConfirmPassword, 0, 5);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 315);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 349);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -141,7 +105,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(417, 197);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(416, 197);
             this.tableLayoutPanel1.TabIndex = 40;
             // 
             // lblTextUserName
@@ -182,29 +146,35 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             // 
             // tbUserName
             // 
-            this.tbUserName.BackColor = System.Drawing.Color.Gray;
-            this.tbUserName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbUserName.ForeColor = System.Drawing.Color.White;
             this.tbUserName.Location = new System.Drawing.Point(3, 35);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(411, 23);
+            this.tbUserName.Size = new System.Drawing.Size(410, 20);
             this.tbUserName.TabIndex = 6;
             // 
             // tbPassword
             // 
-            this.tbPassword.BackColor = System.Drawing.Color.Gray;
-            this.tbPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbPassword.ForeColor = System.Drawing.Color.White;
             this.tbPassword.Location = new System.Drawing.Point(3, 99);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(411, 23);
+            this.tbPassword.Size = new System.Drawing.Size(410, 20);
             this.tbPassword.TabIndex = 7;
             // 
             // tbConfirmPassword
             // 
-            this.tbConfirmPassword.BackColor = System.Drawing.Color.Gray;
-            this.tbConfirmPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbConfirmPassword.ForeColor = System.Drawing.Color.White;
             this.tbConfirmPassword.Location = new System.Drawing.Point(3, 163);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
-            this.tbConfirmPassword.Size = new System.Drawing.Size(411, 23);
+            this.tbConfirmPassword.Size = new System.Drawing.Size(410, 20);
             this.tbConfirmPassword.TabIndex = 8;
             // 
             // btnRemovePermission
@@ -214,7 +184,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnRemovePermission.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnRemovePermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemovePermission.ForeColor = System.Drawing.Color.White;
-            this.btnRemovePermission.Location = new System.Drawing.Point(203, 595);
+            this.btnRemovePermission.Location = new System.Drawing.Point(203, 610);
             this.btnRemovePermission.Name = "btnRemovePermission";
             this.btnRemovePermission.Size = new System.Drawing.Size(34, 32);
             this.btnRemovePermission.TabIndex = 39;
@@ -228,7 +198,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnAddPermission.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnAddPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPermission.ForeColor = System.Drawing.Color.White;
-            this.btnAddPermission.Location = new System.Drawing.Point(203, 557);
+            this.btnAddPermission.Location = new System.Drawing.Point(203, 572);
             this.btnAddPermission.Name = "btnAddPermission";
             this.btnAddPermission.Size = new System.Drawing.Size(34, 32);
             this.btnAddPermission.TabIndex = 38;
@@ -237,22 +207,28 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             // 
             // lbUserPermissions
             // 
-            this.lbUserPermissions.BackColor = System.Drawing.Color.Gray;
+            this.lbUserPermissions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbUserPermissions.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbUserPermissions.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbUserPermissions.ForeColor = System.Drawing.Color.White;
             this.lbUserPermissions.FormattingEnabled = true;
-            this.lbUserPermissions.ItemHeight = 15;
-            this.lbUserPermissions.Location = new System.Drawing.Point(243, 557);
+            this.lbUserPermissions.ItemHeight = 20;
+            this.lbUserPermissions.Location = new System.Drawing.Point(242, 572);
             this.lbUserPermissions.Name = "lbUserPermissions";
-            this.lbUserPermissions.Size = new System.Drawing.Size(186, 184);
+            this.lbUserPermissions.Size = new System.Drawing.Size(186, 180);
             this.lbUserPermissions.TabIndex = 37;
             // 
             // listBox1
             // 
-            this.listBox1.BackColor = System.Drawing.Color.Gray;
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(12, 557);
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(12, 572);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(185, 184);
+            this.listBox1.Size = new System.Drawing.Size(185, 180);
             this.listBox1.TabIndex = 36;
             // 
             // btnClearParameters
@@ -263,9 +239,9 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnClearParameters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearParameters.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearParameters.ForeColor = System.Drawing.Color.White;
-            this.btnClearParameters.Location = new System.Drawing.Point(58, 756);
+            this.btnClearParameters.Location = new System.Drawing.Point(243, 762);
             this.btnClearParameters.Name = "btnClearParameters";
-            this.btnClearParameters.Size = new System.Drawing.Size(160, 50);
+            this.btnClearParameters.Size = new System.Drawing.Size(185, 50);
             this.btnClearParameters.TabIndex = 35;
             this.btnClearParameters.Text = "Clear Parameters";
             this.btnClearParameters.UseVisualStyleBackColor = false;
@@ -278,9 +254,9 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnSaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUser.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUser.ForeColor = System.Drawing.Color.White;
-            this.btnSaveUser.Location = new System.Drawing.Point(224, 756);
+            this.btnSaveUser.Location = new System.Drawing.Point(12, 762);
             this.btnSaveUser.Name = "btnSaveUser";
-            this.btnSaveUser.Size = new System.Drawing.Size(160, 50);
+            this.btnSaveUser.Size = new System.Drawing.Size(185, 50);
             this.btnSaveUser.TabIndex = 34;
             this.btnSaveUser.Text = "Add to Database";
             this.btnSaveUser.UseVisualStyleBackColor = false;
@@ -290,18 +266,46 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lblTextUserList.AutoSize = true;
             this.lblTextUserList.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTextUserList.ForeColor = System.Drawing.Color.White;
-            this.lblTextUserList.Location = new System.Drawing.Point(85, 84);
+            this.lblTextUserList.Location = new System.Drawing.Point(12, 9);
             this.lblTextUserList.Name = "lblTextUserList";
             this.lblTextUserList.Size = new System.Drawing.Size(77, 20);
             this.lblTextUserList.TabIndex = 43;
             this.lblTextUserList.Text = "Users List";
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(12, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(383, 23);
+            this.textBox1.TabIndex = 44;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(401, 32);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.button1.Size = new System.Drawing.Size(27, 23);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "🔍";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // EditUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(440, 818);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.ClientSize = new System.Drawing.Size(440, 831);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblTextUserList);
             this.Controls.Add(this.lblTextUserPermissions);
             this.Controls.Add(this.lblTextPermissionsList);
@@ -313,9 +317,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.Controls.Add(this.btnClearParameters);
             this.Controls.Add(this.btnSaveUser);
             this.Controls.Add(this.lbUsersList);
-            this.Controls.Add(this.lblDBPath);
-            this.Controls.Add(this.lblTextDatabasePath);
-            this.Controls.Add(this.btnBrowseDBPath);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "EditUsers";
@@ -329,10 +330,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblDBPath;
-        private System.Windows.Forms.Label lblTextDatabasePath;
-        private System.Windows.Forms.Button btnBrowseDBPath;
         private System.Windows.Forms.ListBox lbUsersList;
         private System.Windows.Forms.Label lblTextUserPermissions;
         private System.Windows.Forms.Label lblTextPermissionsList;
@@ -350,5 +347,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         private System.Windows.Forms.Button btnClearParameters;
         private System.Windows.Forms.Button btnSaveUser;
         private System.Windows.Forms.Label lblTextUserList;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

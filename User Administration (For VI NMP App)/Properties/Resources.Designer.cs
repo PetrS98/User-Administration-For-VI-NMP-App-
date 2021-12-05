@@ -83,9 +83,39 @@ namespace User_Administration__For_VI_NMP_App_.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GreenDot_3 {
+            get {
+                object obj = ResourceManager.GetObject("GreenDot_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NexenLogo {
             get {
                 object obj = ResourceManager.GetObject("NexenLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RedDot_2 {
+            get {
+                object obj = ResourceManager.GetObject("RedDot_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhiteDot_2 {
+            get {
+                object obj = ResourceManager.GetObject("WhiteDot_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Data.Sqlite;
+using User_Administration__For_VI_NMP_App_.Forms.MessageBoxes;
 
 namespace User_Administration__For_VI_NMP_App_.Classes
 {
@@ -14,27 +15,27 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             
         }
 
-        public bool CreateDatabase(string Path)
-        {
-            if (Connect(Path) == false) return false;
+        //public bool CreateDatabase(string Path)
+        //{
+        //    if (Connect(Path) == false) return false;
 
-            SqliteCommand sqliteCommand = sqliteConnection.CreateCommand();
+        //    SqliteCommand sqliteCommand = sqliteConnection.CreateCommand();
 
-            sqliteCommand.CommandText = "CREATE TABLE NexenUsers (ID integer primary key autoincrement, UserName text, Password text, Permission text);";
+        //    sqliteCommand.CommandText = "CREATE TABLE NexenUsers (ID integer primary key autoincrement, UserName text, Password text, Permission text);";
 
-            try
-            {
-                sqliteCommand.ExecuteNonQuery();
-            }
-            catch 
-            {
-                sqliteConnection.Close();
-                return false;
-            }
+        //    try
+        //    {
+        //        sqliteCommand.ExecuteNonQuery();
+        //    }
+        //    catch 
+        //    {
+        //        sqliteConnection.Close();
+        //        return false;
+        //    }
 
-            sqliteConnection.Close();
-            return true;
-        }
+        //    sqliteConnection.Close();
+        //    return true;
+        //}
 
         public List<string> ReadUserNames(string Path)
         {
@@ -178,7 +179,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             return true;
         }
 
-        public bool Connect(string Path)
+        private bool Connect(string Path)
         {
             try
             {
@@ -186,10 +187,11 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 sqliteConnection.Open();
                 return true;
             }
-            catch
-            { 
-                return false; 
-            } 
+            catch (Exception ex)
+            {
+                CustomMessageBox.ShowPopup("Critical Error", ex.StackTrace);
+                return false;
+            }
         }
     }
 }
