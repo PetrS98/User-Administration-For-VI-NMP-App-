@@ -36,11 +36,5 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 lblTextUserList.Text =          "Users List";
             }
         }
-
-        private void DeleteUsers_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            Hide();
-        }
     }
 }

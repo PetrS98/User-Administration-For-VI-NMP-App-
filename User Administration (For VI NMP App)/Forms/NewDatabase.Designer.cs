@@ -42,7 +42,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             // btnCreateDatabase
             // 
             this.btnCreateDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCreateDatabase.Enabled = false;
             this.btnCreateDatabase.FlatAppearance.BorderSize = 0;
             this.btnCreateDatabase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnCreateDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -142,12 +141,11 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.Controls.Add(this.btnBrowseDBFolder);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnCreateDatabase);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "NewDatabase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New Database";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewDatabase_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

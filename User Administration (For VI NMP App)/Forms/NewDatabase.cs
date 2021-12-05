@@ -53,12 +53,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             }
         }
 
-        private void NewDatabase_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            Hide();
-        }
-
         private void btnBrowseDBFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
@@ -71,7 +65,10 @@ namespace User_Administration__For_VI_NMP_App_.Forms
 
         private void btnCreateDatabase_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrWhiteSpace(tbDatabaseName.Text))
+            {
+                
+            }
         }
     }
 }

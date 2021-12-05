@@ -293,12 +293,11 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.Controls.Add(this.lbPermissionsList);
             this.Controls.Add(this.btnClearParameters);
             this.Controls.Add(this.btnSaveUser);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "AddUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Users";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddUsers_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

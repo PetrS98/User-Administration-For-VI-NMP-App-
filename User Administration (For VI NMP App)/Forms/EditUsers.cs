@@ -50,11 +50,5 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 btnSaveUser.Text =              "Add to Database";
             }
         }
-
-        private void EditUsers_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            Hide();
-        }
     }
 }

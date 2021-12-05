@@ -316,12 +316,11 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.Controls.Add(this.lblDBPath);
             this.Controls.Add(this.lblTextDatabasePath);
             this.Controls.Add(this.btnBrowseDBPath);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "EditUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Users";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditUsers_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
