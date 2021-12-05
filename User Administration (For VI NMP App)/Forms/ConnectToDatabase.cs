@@ -35,21 +35,23 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 //*************************Texty Obrazovky***************************
                 //-------------------------------------------------------------------
 
-                lblTextIpAddress.Text = "IP Adresa Serveru";
-                lblTextUserName.Text = "Uživatelské Jméno";
-                lblTextPassword.Text = "Heslo";
-                lblTextConnectionStatus.Text = "Status Připojení";
+                lblTextIpAddress.Text =         "IP Adresa Serveru";
+                lblTextUserName.Text =          "Uživatelské Jméno";
+                lblTextPassword.Text =          "Heslo";
+                lblTextConnectionStatus.Text =  "Status Připojení";
+                btnConnect.Text =               "Připojit";
+                btnDisconnect.Text =            "Odpojit";
 
                 //-------------------------------------------------------------------
                 //*****************************Erory*********************************
                 //-------------------------------------------------------------------
 
-                Error_1[0] = "Chyba Vstupu";
-                Error_1[1] = "Ip adresa není ve správném tvaru. (např. 192.168.110.120)";
-                Error_2[0] = "Chyba Vstupu";
-                Error_2[1] = "Uživatelské jméno nesmí být prázdné!!!";
-                Error_3[0] = "Chyba Vstupu";
-                Error_3[1] = "Heslo nesmí být prázdné!!!";
+                Error_1[0] =    "Chyba Vstupu";
+                Error_1[1] =    "Ip adresa není ve správném tvaru. (např. 192.168.110.120)";
+                Error_2[0] =    "Chyba Vstupu";
+                Error_2[1] =    "Uživatelské jméno nesmí být prázdné!!!";
+                Error_3[0] =    "Chyba Vstupu";
+                Error_3[1] =    "Heslo nesmí být prázdné!!!";
 
             }
             else if (Translator.Language == Language.ENG)
@@ -58,21 +60,23 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 //***************************Form Texts******************************
                 //-------------------------------------------------------------------
 
-                lblTextIpAddress.Text = "Server IP Address";
-                lblTextUserName.Text = "User Name";
-                lblTextPassword.Text = "Password";
-                lblTextConnectionStatus.Text = "Connection Status";
+                lblTextIpAddress.Text =         "Server IP Address";
+                lblTextUserName.Text =          "User Name";
+                lblTextPassword.Text =          "Password";
+                lblTextConnectionStatus.Text =  "Connection Status";
+                btnConnect.Text =               "Connect";
+                btnDisconnect.Text =            "Disconnect";
 
                 //-------------------------------------------------------------------
                 //*****************************Errors********************************
                 //-------------------------------------------------------------------
 
-                Error_1[0] = "Input Error";
-                Error_1[1] = "Ip address is not in correct format. (e.g 192.168.110.120)";
-                Error_2[0] = "Input Error";
-                Error_2[1] = "User name must not be empty!!!";
-                Error_3[0] = "Input Error";
-                Error_3[1] = "Password must not be empty!!!";
+                Error_1[0] =    "Input Error";
+                Error_1[1] =    "Ip address is not in correct format. (e.g 192.168.110.120)";
+                Error_2[0] =    "Input Error";
+                Error_2[1] =    "User name must not be empty!!!";
+                Error_3[0] =    "Input Error";
+                Error_3[1] =    "Password must not be empty!!!";
 
             }
         }

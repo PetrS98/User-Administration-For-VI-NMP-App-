@@ -67,7 +67,7 @@ namespace User_Administration__For_VI_NMP_App_
         public MainMenu()
         {
             InitializeComponent();
-            CustomMessageBox_Yes_No.ShowPopup("asdlůfijk", "asdfsadf");
+
             Translator.LanguageChanged += Translate;
 
             connectToDatabase = new ConnectToDatabase(mySQLDatabase);
@@ -94,27 +94,30 @@ namespace User_Administration__For_VI_NMP_App_
             pagePanel.Controls.Add(editUsers);
 
             Translator.Language = Language.ENG;
+
+            ActiveButton = btnConnectToDatabase;
+            ActivePage = connectToDatabase;
         }
 
         private void Translate(object sender, Language e)
         {
             if (Translator.Language == Language.CZ)
             {
-                Text =                      "Administrace Databáze Uživatelů";
-                lblTitle.Text =             "Administrace Databáze Uživatelů";
-                btnCreateDatabase.Text =    "Připojení k Databázi";
-                btnAddUser.Text =           "Přidání Uživatele";
-                btnEditUser.Text =          "Editace Uživatele";
-                btnDeleteUser.Text =        "Smazání Uživatele";
+                Text =                          "Administrace Databáze Uživatelů";
+                lblTitle.Text =                 "Administrace Databáze Uživatelů";
+                btnConnectToDatabase.Text =     "Připojení k Databázi";
+                btnAddUser.Text =               "Přidání Uživatele";
+                btnEditUser.Text =              "Editace Uživatele";
+                btnDeleteUser.Text =            "Smazání Uživatele";
             }
             else if (Translator.Language == Language.ENG)
             {
-                Text =                      "User Database Administration";
-                lblTitle.Text =             "User Database Administration";
-                btnCreateDatabase.Text =    "Connect to Database";
-                btnAddUser.Text =           "Add User";
-                btnEditUser.Text =          "Edit User";
-                btnDeleteUser.Text =        "Delete User";
+                Text =                          "User Database Administration";
+                lblTitle.Text =                 "User Database Administration";
+                btnConnectToDatabase.Text =     "Connect to Database";
+                btnAddUser.Text =               "Add User";
+                btnEditUser.Text =              "Edit User";
+                btnDeleteUser.Text =            "Delete User";
             }
 
         }

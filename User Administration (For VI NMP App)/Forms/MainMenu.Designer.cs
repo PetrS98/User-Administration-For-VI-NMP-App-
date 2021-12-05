@@ -30,7 +30,7 @@ namespace User_Administration__For_VI_NMP_App_
         private void InitializeComponent()
         {
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnCreateDatabase = new System.Windows.Forms.Button();
+            this.btnConnectToDatabase = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnEditUser = new System.Windows.Forms.Button();
             this.pbLanguage = new System.Windows.Forms.PictureBox();
@@ -68,23 +68,23 @@ namespace User_Administration__For_VI_NMP_App_
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
-            // btnCreateDatabase
+            // btnConnectToDatabase
             // 
-            this.btnCreateDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCreateDatabase.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCreateDatabase.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCreateDatabase.FlatAppearance.BorderSize = 0;
-            this.btnCreateDatabase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnCreateDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateDatabase.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCreateDatabase.ForeColor = System.Drawing.Color.White;
-            this.btnCreateDatabase.Location = new System.Drawing.Point(0, 0);
-            this.btnCreateDatabase.Name = "btnCreateDatabase";
-            this.btnCreateDatabase.Size = new System.Drawing.Size(295, 61);
-            this.btnCreateDatabase.TabIndex = 1;
-            this.btnCreateDatabase.Text = "Connect to Database";
-            this.btnCreateDatabase.UseVisualStyleBackColor = false;
-            this.btnCreateDatabase.Click += new System.EventHandler(this.btnConnectToDatabase_Click);
+            this.btnConnectToDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConnectToDatabase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConnectToDatabase.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnConnectToDatabase.FlatAppearance.BorderSize = 0;
+            this.btnConnectToDatabase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btnConnectToDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConnectToDatabase.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConnectToDatabase.ForeColor = System.Drawing.Color.White;
+            this.btnConnectToDatabase.Location = new System.Drawing.Point(0, 0);
+            this.btnConnectToDatabase.Name = "btnConnectToDatabase";
+            this.btnConnectToDatabase.Size = new System.Drawing.Size(295, 61);
+            this.btnConnectToDatabase.TabIndex = 1;
+            this.btnConnectToDatabase.Text = "Connect to Database";
+            this.btnConnectToDatabase.UseVisualStyleBackColor = false;
+            this.btnConnectToDatabase.Click += new System.EventHandler(this.btnConnectToDatabase_Click);
             // 
             // btnAddUser
             // 
@@ -169,7 +169,7 @@ namespace User_Administration__For_VI_NMP_App_
             this.p3.Controls.Add(this.btnDeleteUser);
             this.p3.Controls.Add(this.btnEditUser);
             this.p3.Controls.Add(this.btnAddUser);
-            this.p3.Controls.Add(this.btnCreateDatabase);
+            this.p3.Controls.Add(this.btnConnectToDatabase);
             this.p3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.p3.Location = new System.Drawing.Point(0, 233);
             this.p3.Name = "p3";
@@ -316,7 +316,7 @@ namespace User_Administration__For_VI_NMP_App_
         #endregion
 
         private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.Button btnCreateDatabase;
+        private System.Windows.Forms.Button btnConnectToDatabase;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.PictureBox pbLanguage;
