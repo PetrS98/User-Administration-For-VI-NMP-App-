@@ -119,7 +119,6 @@ namespace User_Administration__For_VI_NMP_App_
                 btnEditUser.Text =              "Edit User";
                 btnDeleteUser.Text =            "Delete User";
             }
-
         }
 
         private void pbLanguage_Click(object sender, EventArgs e)

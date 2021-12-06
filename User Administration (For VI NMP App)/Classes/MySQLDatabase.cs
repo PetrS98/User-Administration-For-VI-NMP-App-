@@ -32,7 +32,6 @@ namespace User_Administration__For_VI_NMP_App_.Classes
         {
             _timerStatus.Interval = 100;
             _timerStatus.Elapsed += CheckStatus;
-            _timerStatus.Start();
         }
 
         public bool ConnectToDatabase(string IpAddress, string UserName, string Password)
@@ -41,6 +40,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             {
                 mySqlConnection = new MySqlConnection("server=" + IpAddress + ";" + "uid=" + UserName + ";" + "pwd=" + Password + ";" + "database=db_visual_inspection");
                 mySqlConnection.Open();
+                _timerStatus.Start();
                 return true;
             }
             catch(Exception ex)
@@ -52,36 +52,62 @@ namespace User_Administration__For_VI_NMP_App_.Classes
 
         public void DisconnectFromDatabase()
         {
-            mySqlConnection.Close();
+            _timerStatus.Stop();
+            Status = ClientStatus.Disconnected;
+            mySqlConnection?.Close();
+            mySqlConnection = null;
         }
 
         public List<Permission> ReadPermission()
         {
-            MySqlDataReader mySqlDataReader;
-            MySqlCommand mySqlCommand = new MySqlCommand();
-
             List<Permission> UserPermission = new List<Permission>();
 
+            using MySqlCommand mySqlCommand = new MySqlCommand();
             mySqlCommand.Connection = mySqlConnection;
             mySqlCommand.CommandText = @"SELECT permission_name, bit_position FROM permissions;";
 
             try
             {
-                mySqlDataReader = mySqlCommand.ExecuteReader();
+                using MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+                while (mySqlDataReader.Read())
+                {
+                    Permission permission = new Permission(mySqlDataReader.GetString(0), mySqlDataReader.GetByte(1));
+
+                    UserPermission.Add(permission);
+                }
+                return UserPermission;
             }
             catch
             {
                 return null;
             }
+        }
 
-            while (mySqlDataReader.Read())
+        public bool WriteNewUserToDatabase(int PersonalID, string FirstName, string LastName, string Password, int Permission)
+        {
+            using MySqlCommand mySqlCommand = new MySqlCommand();
+
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.CommandText = @"INSERT INTO users (personal_id, first_name, last_name, password, permissions) 
+                                                   VALUES (@PersonalID, @FirstName, @LastName, @Password, @Permission)";
+
+            mySqlCommand.Parameters.AddWithValue("@PersonalID", PersonalID);
+            mySqlCommand.Parameters.AddWithValue("@FirstName", FirstName);
+            mySqlCommand.Parameters.AddWithValue("@LastName", LastName);
+            mySqlCommand.Parameters.AddWithValue("@Password", Password);
+            mySqlCommand.Parameters.AddWithValue("@Permission", Permission);
+
+            try
             {
-                Permission permission = new Permission(mySqlDataReader.GetString(0), mySqlDataReader.GetByte(1));
-
-                UserPermission.Add(permission);
+                mySqlCommand.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                CustomMessageBox.ShowPopup("", ex.ToString());
+                return false;
             }
 
-            return UserPermission;
+            return true;
         }
 
         private void CheckStatus(object sender, ElapsedEventArgs e)

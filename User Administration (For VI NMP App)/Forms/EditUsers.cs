@@ -32,8 +32,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 lblTextUserName.Text =          "Uživatelské Jméno";
                 lblTextPassword.Text =          "Heslo";
                 lblTextConfirmPassword.Text =   "Potvrzení Hesla";
-                lblTextPermissionsList.Text =   "Seznam Opravnění";
-                lblTextUserPermissions.Text =   "Oprávnění Uživatele";
                 btnClearParameters.Text =       "Vyčistit Parametry";
                 btnSaveUser.Text =              "Přidat do Databáze";
             }
@@ -44,8 +42,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 lblTextUserName.Text =          "User Name";
                 lblTextPassword.Text =          "Password";
                 lblTextConfirmPassword.Text =   "Confirm Password";
-                lblTextPermissionsList.Text =   "Permissions List";
-                lblTextUserPermissions.Text =   "User Permissions";
                 btnClearParameters.Text =       "Clear Parameters";
                 btnSaveUser.Text =              "Add to Database";
             }

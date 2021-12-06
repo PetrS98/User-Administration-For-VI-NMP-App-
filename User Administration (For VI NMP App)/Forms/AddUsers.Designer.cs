@@ -29,107 +29,107 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTextUserName = new System.Windows.Forms.Label();
+            this.lblTextPersonalID = new System.Windows.Forms.Label();
+            this.lblTextFirstName = new System.Windows.Forms.Label();
+            this.lblTextLastName = new System.Windows.Forms.Label();
+            this.tbPersonalID = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.btnAddToDatabase = new System.Windows.Forms.Button();
+            this.btnClearParameters = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTextPassword = new System.Windows.Forms.Label();
             this.lblTextConfirmPassword = new System.Windows.Forms.Label();
-            this.tbUseName = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
-            this.btnSaveUser = new System.Windows.Forms.Button();
-            this.btnClearParameters = new System.Windows.Forms.Button();
-            this.lbPermissionsList = new System.Windows.Forms.ListBox();
-            this.lbUserPermissions = new System.Windows.Forms.ListBox();
-            this.btnAddPermission = new System.Windows.Forms.Button();
-            this.btnRemovePermission = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTextPermissionsList = new System.Windows.Forms.Label();
-            this.lblTextUserPermissions = new System.Windows.Forms.Label();
+            this.perPick = new User_Administration__For_VI_NMP_App_.UserControls.PermissionPicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblTextUserName
+            // lblTextPersonalID
             // 
-            this.lblTextUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTextUserName.AutoSize = true;
-            this.lblTextUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextUserName.ForeColor = System.Drawing.Color.White;
-            this.lblTextUserName.Location = new System.Drawing.Point(3, 12);
-            this.lblTextUserName.Name = "lblTextUserName";
-            this.lblTextUserName.Size = new System.Drawing.Size(87, 20);
-            this.lblTextUserName.TabIndex = 3;
-            this.lblTextUserName.Text = "User Name";
+            this.lblTextPersonalID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTextPersonalID.AutoSize = true;
+            this.lblTextPersonalID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTextPersonalID.ForeColor = System.Drawing.Color.White;
+            this.lblTextPersonalID.Location = new System.Drawing.Point(3, 10);
+            this.lblTextPersonalID.Name = "lblTextPersonalID";
+            this.lblTextPersonalID.Size = new System.Drawing.Size(89, 20);
+            this.lblTextPersonalID.TabIndex = 3;
+            this.lblTextPersonalID.Text = "Personal ID";
             // 
-            // lblTextPassword
+            // lblTextFirstName
             // 
-            this.lblTextPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTextPassword.AutoSize = true;
-            this.lblTextPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextPassword.ForeColor = System.Drawing.Color.White;
-            this.lblTextPassword.Location = new System.Drawing.Point(3, 76);
-            this.lblTextPassword.Name = "lblTextPassword";
-            this.lblTextPassword.Size = new System.Drawing.Size(76, 20);
-            this.lblTextPassword.TabIndex = 4;
-            this.lblTextPassword.Text = "Password";
+            this.lblTextFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTextFirstName.AutoSize = true;
+            this.lblTextFirstName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTextFirstName.ForeColor = System.Drawing.Color.White;
+            this.lblTextFirstName.Location = new System.Drawing.Point(3, 70);
+            this.lblTextFirstName.Name = "lblTextFirstName";
+            this.lblTextFirstName.Size = new System.Drawing.Size(86, 20);
+            this.lblTextFirstName.TabIndex = 4;
+            this.lblTextFirstName.Text = "First Name";
             // 
-            // lblTextConfirmPassword
+            // lblTextLastName
             // 
-            this.lblTextConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTextConfirmPassword.AutoSize = true;
-            this.lblTextConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextConfirmPassword.ForeColor = System.Drawing.Color.White;
-            this.lblTextConfirmPassword.Location = new System.Drawing.Point(3, 140);
-            this.lblTextConfirmPassword.Name = "lblTextConfirmPassword";
-            this.lblTextConfirmPassword.Size = new System.Drawing.Size(137, 20);
-            this.lblTextConfirmPassword.TabIndex = 5;
-            this.lblTextConfirmPassword.Text = "Confirm Password";
+            this.lblTextLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTextLastName.AutoSize = true;
+            this.lblTextLastName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTextLastName.ForeColor = System.Drawing.Color.White;
+            this.lblTextLastName.Location = new System.Drawing.Point(3, 130);
+            this.lblTextLastName.Name = "lblTextLastName";
+            this.lblTextLastName.Size = new System.Drawing.Size(84, 20);
+            this.lblTextLastName.TabIndex = 5;
+            this.lblTextLastName.Text = "Last Name";
             // 
-            // tbUseName
+            // tbPersonalID
             // 
-            this.tbUseName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbUseName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbUseName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbUseName.ForeColor = System.Drawing.Color.White;
-            this.tbUseName.Location = new System.Drawing.Point(3, 35);
-            this.tbUseName.Name = "tbUseName";
-            this.tbUseName.Size = new System.Drawing.Size(411, 20);
-            this.tbUseName.TabIndex = 6;
+            this.tbPersonalID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbPersonalID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPersonalID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbPersonalID.ForeColor = System.Drawing.Color.White;
+            this.tbPersonalID.Location = new System.Drawing.Point(3, 33);
+            this.tbPersonalID.Name = "tbPersonalID";
+            this.tbPersonalID.Size = new System.Drawing.Size(411, 20);
+            this.tbPersonalID.TabIndex = 6;
             // 
-            // tbPassword
+            // tbFirstName
             // 
-            this.tbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbPassword.ForeColor = System.Drawing.Color.White;
-            this.tbPassword.Location = new System.Drawing.Point(3, 99);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(411, 20);
-            this.tbPassword.TabIndex = 7;
+            this.tbFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbFirstName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbFirstName.ForeColor = System.Drawing.Color.White;
+            this.tbFirstName.Location = new System.Drawing.Point(3, 93);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(411, 20);
+            this.tbFirstName.TabIndex = 7;
             // 
-            // tbConfirmPassword
+            // tbLastName
             // 
-            this.tbConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbConfirmPassword.ForeColor = System.Drawing.Color.White;
-            this.tbConfirmPassword.Location = new System.Drawing.Point(3, 163);
-            this.tbConfirmPassword.Name = "tbConfirmPassword";
-            this.tbConfirmPassword.Size = new System.Drawing.Size(411, 20);
-            this.tbConfirmPassword.TabIndex = 8;
+            this.tbLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbLastName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbLastName.ForeColor = System.Drawing.Color.White;
+            this.tbLastName.Location = new System.Drawing.Point(3, 153);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(411, 20);
+            this.tbLastName.TabIndex = 8;
             // 
-            // btnSaveUser
+            // btnAddToDatabase
             // 
-            this.btnSaveUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSaveUser.FlatAppearance.BorderSize = 0;
-            this.btnSaveUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnSaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveUser.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveUser.ForeColor = System.Drawing.Color.White;
-            this.btnSaveUser.Location = new System.Drawing.Point(241, 440);
-            this.btnSaveUser.Name = "btnSaveUser";
-            this.btnSaveUser.Size = new System.Drawing.Size(185, 50);
-            this.btnSaveUser.TabIndex = 9;
-            this.btnSaveUser.Text = "Add to Database";
-            this.btnSaveUser.UseVisualStyleBackColor = false;
+            this.btnAddToDatabase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddToDatabase.FlatAppearance.BorderSize = 0;
+            this.btnAddToDatabase.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btnAddToDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddToDatabase.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddToDatabase.ForeColor = System.Drawing.Color.White;
+            this.btnAddToDatabase.Location = new System.Drawing.Point(244, 540);
+            this.btnAddToDatabase.Name = "btnAddToDatabase";
+            this.btnAddToDatabase.Size = new System.Drawing.Size(185, 50);
+            this.btnAddToDatabase.TabIndex = 9;
+            this.btnAddToDatabase.Text = "Add to Database";
+            this.btnAddToDatabase.UseVisualStyleBackColor = false;
+            this.btnAddToDatabase.Click += new System.EventHandler(this.btnAddToDatabase_Click);
             // 
             // btnClearParameters
             // 
@@ -139,155 +139,133 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnClearParameters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearParameters.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearParameters.ForeColor = System.Drawing.Color.White;
-            this.btnClearParameters.Location = new System.Drawing.Point(10, 440);
+            this.btnClearParameters.Location = new System.Drawing.Point(13, 540);
             this.btnClearParameters.Name = "btnClearParameters";
             this.btnClearParameters.Size = new System.Drawing.Size(185, 50);
             this.btnClearParameters.TabIndex = 10;
             this.btnClearParameters.Text = "Clear Parameters";
             this.btnClearParameters.UseVisualStyleBackColor = false;
             // 
-            // lbPermissionsList
-            // 
-            this.lbPermissionsList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbPermissionsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbPermissionsList.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbPermissionsList.ForeColor = System.Drawing.Color.White;
-            this.lbPermissionsList.FormattingEnabled = true;
-            this.lbPermissionsList.ItemHeight = 20;
-            this.lbPermissionsList.Location = new System.Drawing.Point(10, 254);
-            this.lbPermissionsList.Name = "lbPermissionsList";
-            this.lbPermissionsList.Size = new System.Drawing.Size(185, 180);
-            this.lbPermissionsList.TabIndex = 11;
-            // 
-            // lbUserPermissions
-            // 
-            this.lbUserPermissions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbUserPermissions.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbUserPermissions.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbUserPermissions.ForeColor = System.Drawing.Color.White;
-            this.lbUserPermissions.FormattingEnabled = true;
-            this.lbUserPermissions.ItemHeight = 20;
-            this.lbUserPermissions.Location = new System.Drawing.Point(241, 254);
-            this.lbUserPermissions.Name = "lbUserPermissions";
-            this.lbUserPermissions.Size = new System.Drawing.Size(186, 180);
-            this.lbUserPermissions.TabIndex = 12;
-            // 
-            // btnAddPermission
-            // 
-            this.btnAddPermission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddPermission.FlatAppearance.BorderSize = 0;
-            this.btnAddPermission.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnAddPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPermission.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddPermission.ForeColor = System.Drawing.Color.White;
-            this.btnAddPermission.Location = new System.Drawing.Point(201, 254);
-            this.btnAddPermission.Name = "btnAddPermission";
-            this.btnAddPermission.Size = new System.Drawing.Size(34, 32);
-            this.btnAddPermission.TabIndex = 13;
-            this.btnAddPermission.Text = "-->";
-            this.btnAddPermission.UseVisualStyleBackColor = false;
-            // 
-            // btnRemovePermission
-            // 
-            this.btnRemovePermission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRemovePermission.FlatAppearance.BorderSize = 0;
-            this.btnRemovePermission.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnRemovePermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemovePermission.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRemovePermission.ForeColor = System.Drawing.Color.White;
-            this.btnRemovePermission.Location = new System.Drawing.Point(201, 292);
-            this.btnRemovePermission.Name = "btnRemovePermission";
-            this.btnRemovePermission.Size = new System.Drawing.Size(34, 32);
-            this.btnRemovePermission.TabIndex = 14;
-            this.btnRemovePermission.Text = "<--";
-            this.btnRemovePermission.UseVisualStyleBackColor = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.lblTextUserName, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblTextPassword, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblTextConfirmPassword, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.tbUseName, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tbPassword, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbConfirmPassword, 0, 5);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.lblTextPersonalID, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblTextFirstName, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblTextLastName, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tbPersonalID, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbFirstName, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tbLastName, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lblTextPassword, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblTextConfirmPassword, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.tbPassword, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.tbConfirmPassword, 0, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(417, 197);
+            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(417, 307);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
-            // lblTextPermissionsList
+            // lblTextPassword
             // 
-            this.lblTextPermissionsList.AutoSize = true;
-            this.lblTextPermissionsList.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextPermissionsList.ForeColor = System.Drawing.Color.White;
-            this.lblTextPermissionsList.Location = new System.Drawing.Point(10, 231);
-            this.lblTextPermissionsList.Name = "lblTextPermissionsList";
-            this.lblTextPermissionsList.Size = new System.Drawing.Size(122, 20);
-            this.lblTextPermissionsList.TabIndex = 18;
-            this.lblTextPermissionsList.Text = "Permissions List";
+            this.lblTextPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTextPassword.AutoSize = true;
+            this.lblTextPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTextPassword.ForeColor = System.Drawing.Color.White;
+            this.lblTextPassword.Location = new System.Drawing.Point(3, 190);
+            this.lblTextPassword.Name = "lblTextPassword";
+            this.lblTextPassword.Size = new System.Drawing.Size(76, 20);
+            this.lblTextPassword.TabIndex = 9;
+            this.lblTextPassword.Text = "Password";
             // 
-            // lblTextUserPermissions
+            // lblTextConfirmPassword
             // 
-            this.lblTextUserPermissions.AutoSize = true;
-            this.lblTextUserPermissions.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextUserPermissions.ForeColor = System.Drawing.Color.White;
-            this.lblTextUserPermissions.Location = new System.Drawing.Point(241, 231);
-            this.lblTextUserPermissions.Name = "lblTextUserPermissions";
-            this.lblTextUserPermissions.Size = new System.Drawing.Size(129, 20);
-            this.lblTextUserPermissions.TabIndex = 19;
-            this.lblTextUserPermissions.Text = "User Permissions";
+            this.lblTextConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTextConfirmPassword.AutoSize = true;
+            this.lblTextConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTextConfirmPassword.ForeColor = System.Drawing.Color.White;
+            this.lblTextConfirmPassword.Location = new System.Drawing.Point(3, 250);
+            this.lblTextConfirmPassword.Name = "lblTextConfirmPassword";
+            this.lblTextConfirmPassword.Size = new System.Drawing.Size(137, 20);
+            this.lblTextConfirmPassword.TabIndex = 10;
+            this.lblTextConfirmPassword.Text = "Confirm Password";
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbPassword.ForeColor = System.Drawing.Color.White;
+            this.tbPassword.Location = new System.Drawing.Point(3, 213);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(411, 20);
+            this.tbPassword.TabIndex = 11;
+            // 
+            // tbConfirmPassword
+            // 
+            this.tbConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbConfirmPassword.ForeColor = System.Drawing.Color.White;
+            this.tbConfirmPassword.Location = new System.Drawing.Point(3, 273);
+            this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.Size = new System.Drawing.Size(411, 20);
+            this.tbConfirmPassword.TabIndex = 12;
+            // 
+            // perPick
+            // 
+            this.perPick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.perPick.Location = new System.Drawing.Point(10, 325);
+            this.perPick.Name = "perPick";
+            this.perPick.Size = new System.Drawing.Size(425, 215);
+            this.perPick.TabIndex = 18;
             // 
             // AddUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(449, 519);
-            this.Controls.Add(this.lblTextUserPermissions);
-            this.Controls.Add(this.lblTextPermissionsList);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.btnRemovePermission);
-            this.Controls.Add(this.btnAddPermission);
-            this.Controls.Add(this.lbUserPermissions);
-            this.Controls.Add(this.lbPermissionsList);
+            this.ClientSize = new System.Drawing.Size(455, 602);
+            this.Controls.Add(this.btnAddToDatabase);
             this.Controls.Add(this.btnClearParameters);
-            this.Controls.Add(this.btnSaveUser);
+            this.Controls.Add(this.perPick);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "AddUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Users";
+            this.VisibleChanged += new System.EventHandler(this.AddUsers_VisibleChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblTextUserName;
+        private System.Windows.Forms.Label lblTextPersonalID;
+        private System.Windows.Forms.Label lblTextFirstName;
+        private System.Windows.Forms.Label lblTextLastName;
+        private System.Windows.Forms.TextBox tbPersonalID;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.Button btnAddToDatabase;
+        private System.Windows.Forms.Button btnClearParameters;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblTextPassword;
         private System.Windows.Forms.Label lblTextConfirmPassword;
-        private System.Windows.Forms.TextBox tbUseName;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbConfirmPassword;
-        private System.Windows.Forms.Button btnSaveUser;
-        private System.Windows.Forms.Button btnClearParameters;
-        private System.Windows.Forms.ListBox lbPermissionsList;
-        private System.Windows.Forms.ListBox lbUserPermissions;
-        private System.Windows.Forms.Button btnAddPermission;
-        private System.Windows.Forms.Button btnRemovePermission;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblTextPermissionsList;
-        private System.Windows.Forms.Label lblTextUserPermissions;
+        private UserControls.PermissionPicker perPick;
     }
 }

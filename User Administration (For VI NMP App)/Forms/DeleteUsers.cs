@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using User_Administration__For_VI_NMP_App_.Classes;
 using User_Administration__For_VI_NMP_App_.Forms;
+using User_Administration__For_VI_NMP_App_.Forms.MessageBoxes;
 
 namespace User_Administration__For_VI_NMP_App_.Forms
 {
@@ -36,5 +37,24 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 btnDelete.Text =                "Delete";
             }
         }
+
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    List<Permission> picked = permissionPicker1.GetPickedPermissions();
+        //    permissionPicker1.Reset();
+
+        //    string s = "";
+        //    foreach (var permission in picked)
+        //    {
+        //        s += permission.Name + Environment.NewLine;
+        //    }
+        //    CustomMessageBox.ShowPopup("Picked", s);
+        //}
+
+        //private void btnLoad_Click(object sender, EventArgs e)
+        //{
+        //    List<Permission> permissions = mySQLDatabase.ReadPermission();
+        //    permissionPicker1.InitializePermissions(permissions);
+        //}
     }
 }

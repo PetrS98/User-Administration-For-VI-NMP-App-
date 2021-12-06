@@ -28,10 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UserControl\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="VisualInspection.Utils">
       <HintPath>bin\Debug\netcoreapp3.1\VisualInspection.Utils.dll</HintPath>
     </Reference>

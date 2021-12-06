@@ -30,8 +30,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         private void InitializeComponent()
         {
             this.lbUsersList = new System.Windows.Forms.ListBox();
-            this.lblTextUserPermissions = new System.Windows.Forms.Label();
-            this.lblTextPermissionsList = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTextUserName = new System.Windows.Forms.Label();
             this.lblTextPassword = new System.Windows.Forms.Label();
@@ -39,15 +37,12 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
-            this.btnRemovePermission = new System.Windows.Forms.Button();
-            this.btnAddPermission = new System.Windows.Forms.Button();
-            this.lbUserPermissions = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnClearParameters = new System.Windows.Forms.Button();
             this.btnSaveUser = new System.Windows.Forms.Button();
             this.lblTextUserList = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.permissionPicker1 = new User_Administration__For_VI_NMP_App_.UserControls.PermissionPicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,28 +58,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lbUsersList.Name = "lbUsersList";
             this.lbUsersList.Size = new System.Drawing.Size(416, 280);
             this.lbUsersList.TabIndex = 33;
-            // 
-            // lblTextUserPermissions
-            // 
-            this.lblTextUserPermissions.AutoSize = true;
-            this.lblTextUserPermissions.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextUserPermissions.ForeColor = System.Drawing.Color.White;
-            this.lblTextUserPermissions.Location = new System.Drawing.Point(243, 549);
-            this.lblTextUserPermissions.Name = "lblTextUserPermissions";
-            this.lblTextUserPermissions.Size = new System.Drawing.Size(129, 20);
-            this.lblTextUserPermissions.TabIndex = 42;
-            this.lblTextUserPermissions.Text = "User Permissions";
-            // 
-            // lblTextPermissionsList
-            // 
-            this.lblTextPermissionsList.AutoSize = true;
-            this.lblTextPermissionsList.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTextPermissionsList.ForeColor = System.Drawing.Color.White;
-            this.lblTextPermissionsList.Location = new System.Drawing.Point(12, 549);
-            this.lblTextPermissionsList.Name = "lblTextPermissionsList";
-            this.lblTextPermissionsList.Size = new System.Drawing.Size(122, 20);
-            this.lblTextPermissionsList.TabIndex = 41;
-            this.lblTextPermissionsList.Text = "Permissions List";
             // 
             // tableLayoutPanel1
             // 
@@ -177,60 +150,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.tbConfirmPassword.Size = new System.Drawing.Size(410, 20);
             this.tbConfirmPassword.TabIndex = 8;
             // 
-            // btnRemovePermission
-            // 
-            this.btnRemovePermission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRemovePermission.FlatAppearance.BorderSize = 0;
-            this.btnRemovePermission.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnRemovePermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemovePermission.ForeColor = System.Drawing.Color.White;
-            this.btnRemovePermission.Location = new System.Drawing.Point(203, 610);
-            this.btnRemovePermission.Name = "btnRemovePermission";
-            this.btnRemovePermission.Size = new System.Drawing.Size(34, 32);
-            this.btnRemovePermission.TabIndex = 39;
-            this.btnRemovePermission.Text = "<--";
-            this.btnRemovePermission.UseVisualStyleBackColor = false;
-            // 
-            // btnAddPermission
-            // 
-            this.btnAddPermission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAddPermission.FlatAppearance.BorderSize = 0;
-            this.btnAddPermission.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnAddPermission.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPermission.ForeColor = System.Drawing.Color.White;
-            this.btnAddPermission.Location = new System.Drawing.Point(203, 572);
-            this.btnAddPermission.Name = "btnAddPermission";
-            this.btnAddPermission.Size = new System.Drawing.Size(34, 32);
-            this.btnAddPermission.TabIndex = 38;
-            this.btnAddPermission.Text = "-->";
-            this.btnAddPermission.UseVisualStyleBackColor = false;
-            // 
-            // lbUserPermissions
-            // 
-            this.lbUserPermissions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbUserPermissions.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbUserPermissions.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbUserPermissions.ForeColor = System.Drawing.Color.White;
-            this.lbUserPermissions.FormattingEnabled = true;
-            this.lbUserPermissions.ItemHeight = 20;
-            this.lbUserPermissions.Location = new System.Drawing.Point(242, 572);
-            this.lbUserPermissions.Name = "lbUserPermissions";
-            this.lbUserPermissions.Size = new System.Drawing.Size(186, 180);
-            this.lbUserPermissions.TabIndex = 37;
-            // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listBox1.ForeColor = System.Drawing.Color.White;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(12, 572);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(185, 180);
-            this.listBox1.TabIndex = 36;
-            // 
             // btnClearParameters
             // 
             this.btnClearParameters.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -239,7 +158,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnClearParameters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearParameters.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearParameters.ForeColor = System.Drawing.Color.White;
-            this.btnClearParameters.Location = new System.Drawing.Point(243, 762);
+            this.btnClearParameters.Location = new System.Drawing.Point(244, 769);
             this.btnClearParameters.Name = "btnClearParameters";
             this.btnClearParameters.Size = new System.Drawing.Size(185, 50);
             this.btnClearParameters.TabIndex = 35;
@@ -254,7 +173,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnSaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUser.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUser.ForeColor = System.Drawing.Color.White;
-            this.btnSaveUser.Location = new System.Drawing.Point(12, 762);
+            this.btnSaveUser.Location = new System.Drawing.Point(13, 769);
             this.btnSaveUser.Name = "btnSaveUser";
             this.btnSaveUser.Size = new System.Drawing.Size(185, 50);
             this.btnSaveUser.TabIndex = 34;
@@ -298,22 +217,25 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.button1.Text = "🔍";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // permissionPicker1
+            // 
+            this.permissionPicker1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.permissionPicker1.Location = new System.Drawing.Point(10, 552);
+            this.permissionPicker1.Name = "permissionPicker1";
+            this.permissionPicker1.Size = new System.Drawing.Size(425, 215);
+            this.permissionPicker1.TabIndex = 46;
+            // 
             // EditUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(440, 831);
+            this.Controls.Add(this.permissionPicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblTextUserList);
-            this.Controls.Add(this.lblTextUserPermissions);
-            this.Controls.Add(this.lblTextPermissionsList);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.btnRemovePermission);
-            this.Controls.Add(this.btnAddPermission);
-            this.Controls.Add(this.lbUserPermissions);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnClearParameters);
             this.Controls.Add(this.btnSaveUser);
             this.Controls.Add(this.lbUsersList);
@@ -331,8 +253,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
 
         #endregion
         private System.Windows.Forms.ListBox lbUsersList;
-        private System.Windows.Forms.Label lblTextUserPermissions;
-        private System.Windows.Forms.Label lblTextPermissionsList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblTextUserName;
         private System.Windows.Forms.Label lblTextPassword;
@@ -340,14 +260,11 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         private System.Windows.Forms.TextBox tbUserName;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbConfirmPassword;
-        private System.Windows.Forms.Button btnRemovePermission;
-        private System.Windows.Forms.Button btnAddPermission;
-        private System.Windows.Forms.ListBox lbUserPermissions;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnClearParameters;
         private System.Windows.Forms.Button btnSaveUser;
         private System.Windows.Forms.Label lblTextUserList;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private UserControls.PermissionPicker permissionPicker1;
     }
 }

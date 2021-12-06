@@ -13,9 +13,9 @@ namespace User_Administration__For_VI_NMP_App_.Classes
     {
         MySQLDatabase mySQLDatabase;
 
-        string[] Error_1 = new string[2];
-        string[] Error_2 = new string[2];
-        string[] Error_3 = new string[2];
+        private string[] Error_1 = new string[2];
+        private string[] Error_2 = new string[2];
+        private string[] Error_3 = new string[2];
 
         public ConnectToDatabase(MySQLDatabase MySQLDatabase)
         {
