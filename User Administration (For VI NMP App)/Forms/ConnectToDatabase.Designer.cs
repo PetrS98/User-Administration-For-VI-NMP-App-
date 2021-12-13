@@ -86,7 +86,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.iabServerIp.BlinkBackColor = System.Drawing.Color.Salmon;
             this.iabServerIp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.iabServerIp.ForeColor = System.Drawing.Color.White;
-            this.iabServerIp.IPAddress = "";
+            this.iabServerIp.IPAddress = "213.129.135.117";
             this.iabServerIp.IPAddressAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.iabServerIp.Location = new System.Drawing.Point(4, 37);
             this.iabServerIp.Margin = new System.Windows.Forms.Padding(4);
@@ -117,6 +117,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(178, 20);
             this.tbUserName.TabIndex = 3;
+            this.tbUserName.Text = "root";
             this.tbUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTextPassword
@@ -142,6 +143,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(178, 20);
             this.tbPassword.TabIndex = 5;
+            this.tbPassword.Text = "8adxp5jq";
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTextConnectionStatus

@@ -63,12 +63,14 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             List<Permission> UserPermission = new List<Permission>();
 
             using MySqlCommand mySqlCommand = new MySqlCommand();
+
             mySqlCommand.Connection = mySqlConnection;
             mySqlCommand.CommandText = @"SELECT permission_name, bit_position FROM permissions;";
 
             try
             {
                 using MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+
                 while (mySqlDataReader.Read())
                 {
                     Permission permission = new Permission(mySqlDataReader.GetString(0), mySqlDataReader.GetByte(1));
@@ -83,7 +85,64 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             }
         }
 
-        public bool WriteNewUserToDatabase(int PersonalID, string FirstName, string LastName, string Password, int Permission)
+        public List<UserNameAndID> ReadAllNamesAndIDs()
+        {
+            List<UserNameAndID> AllUsersAndIds = new List<UserNameAndID>();
+
+            using MySqlCommand mySqlCommand = new MySqlCommand();
+
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.CommandText = @"SELECT Personal_id, first_name, last_name FROM users;";
+
+            try
+            {
+                using MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+
+                while (mySqlDataReader.Read())
+                {
+                    AllUsersAndIds.Add(new UserNameAndID(mySqlDataReader.GetInt32(0), mySqlDataReader.GetString(1), mySqlDataReader.GetString(2)));
+                }
+                return AllUsersAndIds;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public UserInformations ReadUserInformation(int PersonalID)
+        {
+            List<Permission> permissions = new List<Permission>(ReadPermission());
+
+            UserInformations UserInformation = new UserInformations(null, null, null);
+
+            using MySqlCommand mySqlCommand = new MySqlCommand();
+
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.CommandText = @"SELECT * FROM users WHERE personal_id = @PersonalID;";
+
+            mySqlCommand.Parameters.AddWithValue("@PersonalID", PersonalID);
+
+            try
+            {
+                using MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+
+                while (mySqlDataReader.Read())
+                {
+                    UserNameAndID NameAndID = new UserNameAndID(mySqlDataReader.GetInt32(1), mySqlDataReader.GetString(2), mySqlDataReader.GetString(3));
+                    string Password = mySqlDataReader.GetString(4);
+                    List<Permission> Permission = NumberToPermissions(mySqlDataReader.GetInt32(5), permissions);
+                    UserInformation = new UserInformations(NameAndID, Password, Permission);
+                }
+                return UserInformation;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public bool WriteUserToDatabase(int PersonalID, string FirstName, string LastName, string Password, int Permission)
         {
             using MySqlCommand mySqlCommand = new MySqlCommand();
 
@@ -127,6 +186,21 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             {
                 Status = ClientStatus.Disconnected;
             }
+        }
+
+        private List<Permission> NumberToPermissions(int number, List<Permission> PermFromDB)
+        {
+            List<Permission> permissions = new List<Permission>();
+
+            for (int i = 0; i < 32; i++)
+            {
+                if ((number & (1 << i)) > 0)
+                {
+                    permissions.Add(new Permission(PermFromDB[i].Name, PermFromDB[i].BitPosition));
+                }
+            }
+
+            return permissions;
         }
     }
 }

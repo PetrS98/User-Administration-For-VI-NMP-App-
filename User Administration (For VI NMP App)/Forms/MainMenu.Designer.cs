@@ -160,7 +160,7 @@ namespace User_Administration__For_VI_NMP_App_
             this.p0.Dock = System.Windows.Forms.DockStyle.Left;
             this.p0.Location = new System.Drawing.Point(0, 37);
             this.p0.Name = "p0";
-            this.p0.Size = new System.Drawing.Size(297, 875);
+            this.p0.Size = new System.Drawing.Size(297, 968);
             this.p0.TabIndex = 6;
             // 
             // p3
@@ -173,7 +173,7 @@ namespace User_Administration__For_VI_NMP_App_
             this.p3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.p3.Location = new System.Drawing.Point(0, 233);
             this.p3.Name = "p3";
-            this.p3.Size = new System.Drawing.Size(295, 640);
+            this.p3.Size = new System.Drawing.Size(295, 733);
             this.p3.TabIndex = 8;
             // 
             // p2
@@ -203,7 +203,7 @@ namespace User_Administration__For_VI_NMP_App_
             this.pagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pagePanel.Location = new System.Drawing.Point(297, 37);
             this.pagePanel.Name = "pagePanel";
-            this.pagePanel.Size = new System.Drawing.Size(439, 875);
+            this.pagePanel.Size = new System.Drawing.Size(439, 968);
             this.pagePanel.TabIndex = 7;
             // 
             // pMain
@@ -290,7 +290,7 @@ namespace User_Administration__For_VI_NMP_App_
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(736, 912);
+            this.ClientSize = new System.Drawing.Size(736, 1005);
             this.Controls.Add(this.pagePanel);
             this.Controls.Add(this.p0);
             this.Controls.Add(this.pMain);

@@ -84,6 +84,23 @@ namespace User_Administration__For_VI_NMP_App_.UserControls
             listBox.Items.Remove(permission.Name);
         }
 
+        public void LoadPermissions(List<Permission> PermmisionsForLoad)
+        {
+            ClearPermissions(pickablePermissions, lbPermissionsList);
+            ClearPermissions(pickedPermissions, lbUserPermissions);
+
+            foreach (var permission in allPermissions)
+            {
+                AddPermission(permission, pickablePermissions, lbPermissionsList);
+            }
+
+            foreach (var permission in PermmisionsForLoad)
+            {
+                RemovePermission(permission, pickablePermissions, lbPermissionsList);
+                AddPermission(permission, pickedPermissions, lbUserPermissions);
+            }
+        }
+
         private void ClearPermissions(List<Permission> list, ListBox listBox)
         {
             list.Clear();

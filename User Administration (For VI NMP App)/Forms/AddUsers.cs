@@ -104,7 +104,10 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         {
             if (CheckInputInfo() == false) return;
 
-            mySQLDatabase.WriteNewUserToDatabase(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text, PasswordHasher.HashPassword(tbPassword.Text), PermissionToNumber(perPick.GetPickedPermissions()));
+            if(mySQLDatabase.WriteUserToDatabase(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text, PasswordHasher.HashPassword(tbPassword.Text), PermissionsToNumber(perPick.GetPickedPermissions())))
+            {
+                ClearData();
+            }
         }
 
         private bool CheckInputInfo()
@@ -168,7 +171,17 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzĚŠČŘŽÝÁÍÉÚŮÓěščřžýáíéúůóß".IndexOf(c) != -1;
         }
 
-        private int PermissionToNumber(List<Permission> permissions)
+        private void ClearData()
+        {
+            tbPersonalID.Text = "";
+            tbFirstName.Text = "";
+            tbLastName.Text = "";
+            tbPassword.Text = "";
+            tbConfirmPassword.Text = "";
+            perPick.Reset();
+        }
+
+        private int PermissionsToNumber(List<Permission> permissions)
         {
             int number = 0;
 
@@ -178,6 +191,21 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             }
 
             return number;
+        }
+
+        private List<Permission> NumberToPermissions(int number, List<Permission> PermFromDB)
+        {
+            List<Permission> permissions = new List<Permission>();
+
+            for(int i = 0; i < 32; i++)
+            {
+                if((number & (1 << i)) > 0)
+                {
+                    permissions.Add(new Permission(PermFromDB[i].Name, PermFromDB[i].BitPosition));
+                }
+            }
+
+            return permissions;
         }
 
         private void AddUsers_VisibleChanged(object sender, EventArgs e)
