@@ -46,6 +46,7 @@ namespace User_Administration__For_VI_NMP_App_
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbIcon = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnAboutApp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguage)).BeginInit();
             this.p0.SuspendLayout();
@@ -166,6 +167,7 @@ namespace User_Administration__For_VI_NMP_App_
             // p3
             // 
             this.p3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.p3.Controls.Add(this.btnAboutApp);
             this.p3.Controls.Add(this.btnDeleteUser);
             this.p3.Controls.Add(this.btnEditUser);
             this.p3.Controls.Add(this.btnAddUser);
@@ -285,6 +287,24 @@ namespace User_Administration__For_VI_NMP_App_
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnAboutApp
+            // 
+            this.btnAboutApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAboutApp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAboutApp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAboutApp.FlatAppearance.BorderSize = 0;
+            this.btnAboutApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btnAboutApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAboutApp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAboutApp.ForeColor = System.Drawing.Color.White;
+            this.btnAboutApp.Location = new System.Drawing.Point(0, 672);
+            this.btnAboutApp.Name = "btnAboutApp";
+            this.btnAboutApp.Size = new System.Drawing.Size(295, 61);
+            this.btnAboutApp.TabIndex = 6;
+            this.btnAboutApp.Text = "About App";
+            this.btnAboutApp.UseVisualStyleBackColor = false;
+            this.btnAboutApp.Click += new System.EventHandler(this.btnAboutApp_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -332,6 +352,7 @@ namespace User_Administration__For_VI_NMP_App_
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pbIcon;
+        private System.Windows.Forms.Button btnAboutApp;
     }
 }
 

@@ -24,6 +24,7 @@ namespace User_Administration__For_VI_NMP_App_
         private AddUsers addUsers;
         private DeleteUsers deleteUsers;
         private EditUsers editUsers;
+        private AboutApp aboutApp; 
 
         private bool mouseDown;
         private Point lastLocation;
@@ -74,6 +75,7 @@ namespace User_Administration__For_VI_NMP_App_
             addUsers = new AddUsers(mySQLDatabase);
             deleteUsers = new DeleteUsers(mySQLDatabase);
             editUsers = new EditUsers(mySQLDatabase);
+            aboutApp = new AboutApp();
 
             connectToDatabase.clientStatusDot1.Client = mySQLDatabase;
 
@@ -93,10 +95,15 @@ namespace User_Administration__For_VI_NMP_App_
             editUsers.Dock = DockStyle.Fill;
             pagePanel.Controls.Add(editUsers);
 
+            aboutApp.TopLevel = false;
+            aboutApp.Dock = DockStyle.Fill;
+            pagePanel.Controls.Add(aboutApp);
+
+
             Translator.Language = Language.ENG;
 
-            ActiveButton = btnConnectToDatabase;
-            ActivePage = connectToDatabase;
+            ActiveButton = btnAboutApp;
+            ActivePage = aboutApp;
         }
 
         private void Translate(object sender, Language e)
@@ -161,6 +168,12 @@ namespace User_Administration__For_VI_NMP_App_
             ActivePage = deleteUsers;
         }
 
+        private void btnAboutApp_Click(object sender, EventArgs e)
+        {
+            ActiveButton = sender as Button;
+            ActivePage = aboutApp;
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -185,5 +198,7 @@ namespace User_Administration__For_VI_NMP_App_
         {
             mouseDown = false;
         }
+
+
     }
 }
