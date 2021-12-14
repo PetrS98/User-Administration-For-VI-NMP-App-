@@ -142,7 +142,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             }
         }
 
-        public bool WriteUserToDatabase(int PersonalID, string FirstName, string LastName, string Password, int Permission)
+        public bool WriteNewUserToDatabase(int PersonalID, string FirstName, string LastName, string Password, int Permission)
         {
             using MySqlCommand mySqlCommand = new MySqlCommand();
 
@@ -161,6 +161,37 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 mySqlCommand.ExecuteNonQuery();
             }
             catch(Exception ex)
+            {
+                CustomMessageBox.ShowPopup("", ex.ToString());
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool UpdateUserInformations(UserInformations userInformations, UserInformations oldUserInformations)
+        {
+            using MySqlCommand mySqlCommand = new MySqlCommand();
+
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.CommandText = @"UPDATE users SET personal_id = @PersonalID, first_name = @FirstName, last_name = @LastName, password = @Password, permissions = @Permission 
+                                         WHERE personal_id = @OldPersonalID AND first_name = @OldFirstName AND last_name = @OldLastName";
+
+            mySqlCommand.Parameters.AddWithValue("@OldPersonalID", oldUserInformations.NameAndID.ID);
+            mySqlCommand.Parameters.AddWithValue("@OldFirstName", oldUserInformations.NameAndID.FirstName);
+            mySqlCommand.Parameters.AddWithValue("@OldLastName", oldUserInformations.NameAndID.LastName);
+
+            mySqlCommand.Parameters.AddWithValue("@PersonalID", userInformations.NameAndID.ID);
+            mySqlCommand.Parameters.AddWithValue("@FirstName", userInformations.NameAndID.FirstName);
+            mySqlCommand.Parameters.AddWithValue("@LastName", userInformations.NameAndID.LastName);
+            mySqlCommand.Parameters.AddWithValue("@Password", userInformations.Password);
+            mySqlCommand.Parameters.AddWithValue("@Permission", PermissionsToNumber(userInformations.Permission));
+
+            try
+            {
+                mySqlCommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
             {
                 CustomMessageBox.ShowPopup("", ex.ToString());
                 return false;
@@ -201,6 +232,18 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             }
 
             return permissions;
+        }
+
+        private int PermissionsToNumber(List<Permission> permissions)
+        {
+            int number = 0;
+
+            foreach (var permission in permissions)
+            {
+                number += 1 << permission.BitPosition;
+            }
+
+            return number;
         }
     }
 }
