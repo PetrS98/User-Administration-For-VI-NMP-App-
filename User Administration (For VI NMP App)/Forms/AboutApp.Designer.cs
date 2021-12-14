@@ -30,13 +30,13 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.lblCreator = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblCopyr = new System.Windows.Forms.Label();
+            this.lblRestriction = new System.Windows.Forms.Label();
+            this.llblCompanyWebsite = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -50,85 +50,85 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lblTitle.Text = "Visual Inspection Database Administration";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblVersion
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Application Version: 1.0.0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblVersion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblVersion.ForeColor = System.Drawing.Color.White;
+            this.lblVersion.Location = new System.Drawing.Point(12, 52);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(400, 40);
+            this.lblVersion.TabIndex = 1;
+            this.lblVersion.Text = "Application Version: 1.0.0";
+            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblCreator
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(252, 40);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Creator: Petr Staněk";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCreator.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCreator.ForeColor = System.Drawing.Color.White;
+            this.lblCreator.Location = new System.Drawing.Point(12, 161);
+            this.lblCreator.Name = "lblCreator";
+            this.lblCreator.Size = new System.Drawing.Size(252, 40);
+            this.lblCreator.TabIndex = 2;
+            this.lblCreator.Text = "Creator: Petr Staněk";
+            this.lblCreator.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // lblEmail
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 201);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(252, 40);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Email: petr.stanek@nexentire.com";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(12, 201);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(252, 40);
+            this.lblEmail.TabIndex = 3;
+            this.lblEmail.Text = "Email: petr.stanek@nexentire.com";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // lblTel
             // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 241);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(252, 40);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Tel: +420 703 496 310";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTel.ForeColor = System.Drawing.Color.White;
+            this.lblTel.Location = new System.Drawing.Point(12, 241);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(252, 40);
+            this.lblTel.TabIndex = 4;
+            this.lblTel.Text = "Tel: +420 703 496 310";
+            this.lblTel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // lblCopyr
             // 
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 291);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(400, 40);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "© 2021 NEXEN Tire s.r.o., All rights reserved.";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCopyr.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCopyr.ForeColor = System.Drawing.Color.White;
+            this.lblCopyr.Location = new System.Drawing.Point(12, 291);
+            this.lblCopyr.Name = "lblCopyr";
+            this.lblCopyr.Size = new System.Drawing.Size(400, 40);
+            this.lblCopyr.TabIndex = 5;
+            this.lblCopyr.Text = "© 2021 NEXEN Tire s.r.o., All rights reserved.";
+            this.lblCopyr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // lblRestriction
             // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 92);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(400, 40);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "This application only for Nexen Tire Czech.";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRestriction.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRestriction.ForeColor = System.Drawing.Color.White;
+            this.lblRestriction.Location = new System.Drawing.Point(12, 92);
+            this.lblRestriction.Name = "lblRestriction";
+            this.lblRestriction.Size = new System.Drawing.Size(400, 40);
+            this.lblRestriction.TabIndex = 6;
+            this.lblRestriction.Text = "This application only for Nexen Tire Czech.";
+            this.lblRestriction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabel1
+            // llblCompanyWebsite
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(148, 132);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(104, 15);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Company Website";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.llblCompanyWebsite.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.llblCompanyWebsite.AutoSize = true;
+            this.llblCompanyWebsite.LinkColor = System.Drawing.Color.White;
+            this.llblCompanyWebsite.Location = new System.Drawing.Point(148, 132);
+            this.llblCompanyWebsite.Name = "llblCompanyWebsite";
+            this.llblCompanyWebsite.Size = new System.Drawing.Size(104, 15);
+            this.llblCompanyWebsite.TabIndex = 8;
+            this.llblCompanyWebsite.TabStop = true;
+            this.llblCompanyWebsite.Text = "Company Website";
+            this.llblCompanyWebsite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblCompanyWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // AboutApp
             // 
@@ -136,13 +136,13 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(424, 932);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.llblCompanyWebsite);
+            this.Controls.Add(this.lblRestriction);
+            this.Controls.Add(this.lblCopyr);
+            this.Controls.Add(this.lblCreator);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblTel);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AboutApp";
@@ -156,12 +156,12 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.Label lblCreator;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.Label lblCopyr;
+        private System.Windows.Forms.Label lblRestriction;
+        private System.Windows.Forms.LinkLabel llblCompanyWebsite;
     }
 }

@@ -63,8 +63,6 @@ namespace User_Administration__For_VI_NMP_App_
             }
         }
 
-
-
         public MainMenu()
         {
             InitializeComponent();
