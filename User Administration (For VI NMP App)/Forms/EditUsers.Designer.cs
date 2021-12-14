@@ -96,6 +96,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnSaveUser.TabIndex = 34;
             this.btnSaveUser.Text = "Add to Database";
             this.btnSaveUser.UseVisualStyleBackColor = false;
+            this.btnSaveUser.Click += new System.EventHandler(this.btnSaveUser_Click);
             // 
             // lblTextUserList
             // 

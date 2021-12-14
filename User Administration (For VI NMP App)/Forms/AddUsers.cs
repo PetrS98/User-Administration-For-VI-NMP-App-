@@ -104,7 +104,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         {
             if (CheckInputInfo() == false) return;
 
-            if(mySQLDatabase.WriteUserToDatabase(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text, PasswordHasher.HashPassword(tbPassword.Text), PermissionsToNumber(perPick.GetPickedPermissions())))
+            if(mySQLDatabase.WriteNewUserToDatabase(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text, PasswordHasher.HashPassword(tbPassword.Text), PermissionsToNumber(perPick.GetPickedPermissions())))
             {
                 ClearData();
             }
