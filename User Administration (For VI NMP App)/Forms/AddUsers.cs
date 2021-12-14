@@ -104,25 +104,31 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         {
             if (CheckInputInfo() == false) return;
 
-            if(mySQLDatabase.WriteNewUserToDatabase(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text, PasswordHasher.HashPassword(tbPassword.Text), PermissionsToNumber(perPick.GetPickedPermissions())))
-            {
-                ClearData();
-            }
+            UserNameAndID userNameAndID = new UserNameAndID(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text);
+            string password = PasswordHasher.HashPassword(tbPassword.Text);
+
+            UserInformations userInformations = new UserInformations(userNameAndID, password, perPick.GetPickedPermissions());
+
+            if (mySQLDatabase.AddUserToDB(userInformations) == false) return;
+
+            ClearParam();
+            perPick.Reset();
+            LoadPermissions();
         }
 
         private bool CheckInputInfo()
         {
-            if(TbInputIsNumber(tbPersonalID) == false)
+            if(TextBoxHelper.TbInputIsNumber(tbPersonalID) == false)
             {
                 CustomMessageBox.ShowPopup(Error_1[0], Error_1[1]);
                 return false;
             }
-            if(TbInputIsText(tbFirstName) == false)
+            if(TextBoxHelper.TbInputIsText(tbFirstName) == false)
             {
                 CustomMessageBox.ShowPopup(Error_2[0], Error_2[1]);
                 return false;
             }
-            if(TbInputIsText(tbLastName) == false)
+            if(TextBoxHelper.TbInputIsText(tbLastName) == false)
             {
                 CustomMessageBox.ShowPopup(Error_3[0], Error_3[1]);
                 return false;
@@ -145,72 +151,30 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             return true;
         }
 
-        private bool TbInputIsNumber(TextBox textBox)
-        {
-            return int.TryParse(textBox.Text, out int result);
-        }
-
-        private bool TbInputIsText(TextBox textBox)
-        {
-            for (int i = 0; i < textBox.Text.Length; i++)
-            {
-                if (IsLetter(textBox.Text[i])) continue;
-                return false;
-            }
-
-            if(textBox.Text == null || textBox.Text == "")
-            {
-                return false;
-            }
-
-            return true;
-        }
-        
-        private bool IsLetter(char c)
-        {
-            return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzĚŠČŘŽÝÁÍÉÚŮÓěščřžýáíéúůóß".IndexOf(c) != -1;
-        }
-
-        private void ClearData()
+        private void ClearParam()
         {
             tbPersonalID.Text = "";
             tbFirstName.Text = "";
             tbLastName.Text = "";
             tbPassword.Text = "";
             tbConfirmPassword.Text = "";
-            perPick.Reset();
         }
 
-        private int PermissionsToNumber(List<Permission> permissions)
+        private void LoadPermissions()
         {
-            int number = 0;
-
-            foreach (var permission in permissions)
-            {
-                number += 1 << permission.BitPosition;
-            }
-
-            return number;
-        }
-
-        private List<Permission> NumberToPermissions(int number, List<Permission> PermFromDB)
-        {
-            List<Permission> permissions = new List<Permission>();
-
-            for(int i = 0; i < 32; i++)
-            {
-                if((number & (1 << i)) > 0)
-                {
-                    permissions.Add(new Permission(PermFromDB[i].Name, PermFromDB[i].BitPosition));
-                }
-            }
-
-            return permissions;
+            if (Visible && mySQLDatabase.Status == ClientStatus.Connected) perPick.InitializePermissions(mySQLDatabase.ReadPermissionList());
         }
 
         private void AddUsers_VisibleChanged(object sender, EventArgs e)
         {
-            if(Visible && mySQLDatabase.Status == ClientStatus.Connected) perPick.InitializePermissions(mySQLDatabase.ReadPermission());    
+            LoadPermissions();
+        }
+
+        private void btnClearParameters_Click(object sender, EventArgs e)
+        {
+            ClearParam();
+            perPick.Reset();
+            LoadPermissions();
         }
     }
 }

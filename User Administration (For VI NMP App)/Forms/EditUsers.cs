@@ -47,6 +47,8 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 lblTextPersonalID.Text =        "Osobní Číslo";
                 lblTextFirstName.Text =         "Jméno";
                 lblTextLastName.Text =          "Příjmení";
+                rdbNewPassword.Text =           "Nové Heslo";
+                rdbOldPassword.Text =           "Staré Heslo";
                 lblTextPassword.Text =          "Heslo";
                 lblTextConfirmPassword.Text =   "Potvrzení Hesla";
                 btnClearParameters.Text =       "Vyčistit Parametry";
@@ -79,6 +81,8 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 lblTextPersonalID.Text =        "Personal ID";
                 lblTextFirstName.Text =         "First Name";
                 lblTextLastName.Text =          "Last Name";
+                rdbNewPassword.Text =           "New Password";
+                rdbOldPassword.Text =           "Old Password";
                 lblTextPassword.Text =          "Password";
                 lblTextConfirmPassword.Text =   "Confirm Password";
                 btnClearParameters.Text =       "Clear Parameters";
@@ -181,9 +185,9 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             {
                 lbUsersList.Items.Clear();
 
-                perPick.InitializePermissions(mySQLDatabase.ReadPermission());
+                perPick.InitializePermissions(mySQLDatabase.ReadPermissionList());
 
-                foreach (var UserName in mySQLDatabase.ReadAllNamesAndIDs())
+                foreach (var UserName in mySQLDatabase.ReadNamesAndIDs())
                 {
                     lbUsersList.Items.Add(UserName.ID.ToString() + " | " + UserName.FirstName + " " + UserName.LastName);
                 }
@@ -192,43 +196,42 @@ namespace User_Administration__For_VI_NMP_App_.Forms
 
         private void btnSaveUser_Click(object sender, EventArgs e)
         {
-            if (CheckInputInfo())
+            if (CheckInputInfo() == false) return;
+
+            UserNameAndID userNameAndID = new UserNameAndID(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text);
+            string password;
+
+            if (rdbNewPassword.Checked)
             {
-                UserNameAndID userNameAndID = new UserNameAndID(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text);
-                string password;
-
-                if (rdbNewPassword.Checked)
-                {
-                    password = PasswordHasher.HashPassword(tbPassword.Text);
-                }
-                else
-                {
-                    password = OldUserInformations.Password;
-                }
-
-                UserInformations = new UserInformations(userNameAndID, password, perPick.GetPickedPermissions());
-
-                mySQLDatabase.UpdateUserInformations(UserInformations, OldUserInformations);
-
-                LoadUsersAndPermissions();
-                ClearParam();
-                perPick.Reset();
+                password = PasswordHasher.HashPassword(tbPassword.Text);
             }
+            else
+            {
+                password = OldUserInformations.Password;
+            }
+
+            UserInformations = new UserInformations(userNameAndID, password, perPick.GetPickedPermissions());
+
+            mySQLDatabase.UpdateUserInformations(UserInformations, OldUserInformations);
+
+            LoadUsersAndPermissions();
+            ClearParam();
+            perPick.Reset();
         }
 
         private bool CheckInputInfo()
         {
-            if (TbInputIsNumber(tbPersonalID) == false)
+            if (TextBoxHelper.TbInputIsNumber(tbPersonalID) == false)
             {
                 CustomMessageBox.ShowPopup(Error_1[0], Error_1[1]);
                 return false;
             }
-            if (TbInputIsText(tbFirstName) == false)
+            if (TextBoxHelper.TbInputIsText(tbFirstName) == false)
             {
                 CustomMessageBox.ShowPopup(Error_2[0], Error_2[1]);
                 return false;
             }
-            if (TbInputIsText(tbLastName) == false)
+            if (TextBoxHelper.TbInputIsText(tbLastName) == false)
             {
                 CustomMessageBox.ShowPopup(Error_3[0], Error_3[1]);
                 return false;
@@ -252,32 +255,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 return false;
             }
             return true;
-        }
-
-        private bool TbInputIsNumber(TextBox textBox)
-        {
-            return int.TryParse(textBox.Text, out int result);
-        }
-
-        private bool TbInputIsText(TextBox textBox)
-        {
-            for (int i = 0; i < textBox.Text.Length; i++)
-            {
-                if (IsLetter(textBox.Text[i])) continue;
-                return false;
-            }
-
-            if (textBox.Text == null || textBox.Text == "")
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool IsLetter(char c)
-        {
-            return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzĚŠČŘŽÝÁÍÉÚŮÓěščřžýáíéúůóß".IndexOf(c) != -1;
         }
     }
 }

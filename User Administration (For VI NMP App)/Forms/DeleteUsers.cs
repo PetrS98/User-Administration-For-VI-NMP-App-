@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using User_Administration__For_VI_NMP_App_.Classes;
 using User_Administration__For_VI_NMP_App_.Forms;
 using User_Administration__For_VI_NMP_App_.Forms.MessageBoxes;
+using VisualInspection.Utils.Net;
 
 namespace User_Administration__For_VI_NMP_App_.Forms
 {
@@ -38,23 +39,31 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             }
         }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    List<Permission> picked = permissionPicker1.GetPickedPermissions();
-        //    permissionPicker1.Reset();
+        private void LoadUsers()
+        {
+            if (Visible && mySQLDatabase.Status == ClientStatus.Connected)
+            {
+                lbUsersList.Items.Clear();
 
-        //    string s = "";
-        //    foreach (var permission in picked)
-        //    {
-        //        s += permission.Name + Environment.NewLine;
-        //    }
-        //    CustomMessageBox.ShowPopup("Picked", s);
-        //}
+                foreach (var UserName in mySQLDatabase.ReadNamesAndIDs())
+                {
+                    lbUsersList.Items.Add(UserName.ID.ToString() + " | " + UserName.FirstName + " " + UserName.LastName);
+                }
+            }
+        }
 
-        //private void btnLoad_Click(object sender, EventArgs e)
-        //{
-        //    List<Permission> permissions = mySQLDatabase.ReadPermission();
-        //    permissionPicker1.InitializePermissions(permissions);
-        //}
+        private void DeleteUsers_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadUsers();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lbUsersList.SelectedItem == null || lbUsersList.SelectedItem.ToString() == "") return;
+
+            string[] IDAndName = lbUsersList.SelectedItem.ToString().Split(" | ");
+
+            if (mySQLDatabase.DeleteUserFromDB(int.Parse(IDAndName[0]))) LoadUsers();
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             _timerStatus.Elapsed += CheckStatus;
         }
 
-        public bool ConnectToDatabase(string IpAddress, string UserName, string Password)
+        public bool ConnectToDB(string IpAddress, string UserName, string Password)
         {
             try
             {
@@ -45,12 +45,12 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             }
             catch(Exception ex)
             {
-                CustomMessageBox.ShowPopup("Alarm", ex.ToString());
+                CustomMessageBox.ShowPopup("MySQL Error", ex.Message);
                 return false;
             }
         }
 
-        public void DisconnectFromDatabase()
+        public void DisconnectFromDB()
         {
             _timerStatus.Stop();
             Status = ClientStatus.Disconnected;
@@ -58,7 +58,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             mySqlConnection = null;
         }
 
-        public List<Permission> ReadPermission()
+        public List<Permission> ReadPermissionList()
         {
             List<Permission> UserPermission = new List<Permission>();
 
@@ -79,13 +79,14 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 }
                 return UserPermission;
             }
-            catch
+            catch(Exception ex)
             {
+                CustomMessageBox.ShowPopup("MySQL Error", ex.Message);
                 return null;
             }
         }
 
-        public List<UserNameAndID> ReadAllNamesAndIDs()
+        public List<UserNameAndID> ReadNamesAndIDs()
         {
             List<UserNameAndID> AllUsersAndIds = new List<UserNameAndID>();
 
@@ -104,15 +105,16 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 }
                 return AllUsersAndIds;
             }
-            catch
+            catch(Exception ex)
             {
+                CustomMessageBox.ShowPopup("MySQL Error", ex.Message);
                 return null;
             }
         }
 
         public UserInformations ReadUserInformation(int PersonalID)
         {
-            List<Permission> permissions = new List<Permission>(ReadPermission());
+            List<Permission> permissions = new List<Permission>(ReadPermissionList());
 
             UserInformations UserInformation = new UserInformations(null, null, null);
 
@@ -131,18 +133,19 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 {
                     UserNameAndID NameAndID = new UserNameAndID(mySqlDataReader.GetInt32(1), mySqlDataReader.GetString(2), mySqlDataReader.GetString(3));
                     string Password = mySqlDataReader.GetString(4);
-                    List<Permission> Permission = NumberToPermissions(mySqlDataReader.GetInt32(5), permissions);
+                    List<Permission> Permission = PermissionConverter.NumberToPermissions(mySqlDataReader.GetInt32(5), permissions);
                     UserInformation = new UserInformations(NameAndID, Password, Permission);
                 }
                 return UserInformation;
             }
-            catch
+            catch(Exception ex)
             {
+                CustomMessageBox.ShowPopup("MySQL Error", ex.Message);
                 return null;
             }
         }
 
-        public bool WriteNewUserToDatabase(int PersonalID, string FirstName, string LastName, string Password, int Permission)
+        public bool AddUserToDB(UserInformations userInformations)
         {
             using MySqlCommand mySqlCommand = new MySqlCommand();
 
@@ -150,23 +153,44 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             mySqlCommand.CommandText = @"INSERT INTO users (personal_id, first_name, last_name, password, permissions) 
                                                    VALUES (@PersonalID, @FirstName, @LastName, @Password, @Permission)";
 
-            mySqlCommand.Parameters.AddWithValue("@PersonalID", PersonalID);
-            mySqlCommand.Parameters.AddWithValue("@FirstName", FirstName);
-            mySqlCommand.Parameters.AddWithValue("@LastName", LastName);
-            mySqlCommand.Parameters.AddWithValue("@Password", Password);
-            mySqlCommand.Parameters.AddWithValue("@Permission", Permission);
+            mySqlCommand.Parameters.AddWithValue("@PersonalID", userInformations.NameAndID.ID);
+            mySqlCommand.Parameters.AddWithValue("@FirstName", userInformations.NameAndID.FirstName);
+            mySqlCommand.Parameters.AddWithValue("@LastName", userInformations.NameAndID.LastName);
+            mySqlCommand.Parameters.AddWithValue("@Password", userInformations.Password);
+            mySqlCommand.Parameters.AddWithValue("@Permission", PermissionConverter.PermissionsToNumber(userInformations.Permission));
 
             try
             {
                 mySqlCommand.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                CustomMessageBox.ShowPopup("", ex.ToString());
+                CustomMessageBox.ShowPopup("MySQL Error", ex.Message);
                 return false;
             }
 
             return true;
+        }
+
+        public bool DeleteUserFromDB(int PersonalID)
+        {
+            using MySqlCommand mySqlCommand = new MySqlCommand();
+
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.CommandText = @"DELETE FROM users WHERE personal_id = @PersonalID;";
+
+            mySqlCommand.Parameters.AddWithValue("@PersonalID", PersonalID);
+
+            try
+            {
+                using MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                CustomMessageBox.ShowPopup("MySQL Error", ex.Message);
+                return false;
+            }
         }
 
         public bool UpdateUserInformations(UserInformations userInformations, UserInformations oldUserInformations)
@@ -185,7 +209,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             mySqlCommand.Parameters.AddWithValue("@FirstName", userInformations.NameAndID.FirstName);
             mySqlCommand.Parameters.AddWithValue("@LastName", userInformations.NameAndID.LastName);
             mySqlCommand.Parameters.AddWithValue("@Password", userInformations.Password);
-            mySqlCommand.Parameters.AddWithValue("@Permission", PermissionsToNumber(userInformations.Permission));
+            mySqlCommand.Parameters.AddWithValue("@Permission", PermissionConverter.PermissionsToNumber(userInformations.Permission));
 
             try
             {
@@ -193,7 +217,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             }
             catch (Exception ex)
             {
-                CustomMessageBox.ShowPopup("", ex.ToString());
+                CustomMessageBox.ShowPopup("MySQL Error", ex.Message);
                 return false;
             }
 
@@ -217,33 +241,6 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             {
                 Status = ClientStatus.Disconnected;
             }
-        }
-
-        private List<Permission> NumberToPermissions(int number, List<Permission> PermFromDB)
-        {
-            List<Permission> permissions = new List<Permission>();
-
-            for (int i = 0; i < 32; i++)
-            {
-                if ((number & (1 << i)) > 0)
-                {
-                    permissions.Add(new Permission(PermFromDB[i].Name, PermFromDB[i].BitPosition));
-                }
-            }
-
-            return permissions;
-        }
-
-        private int PermissionsToNumber(List<Permission> permissions)
-        {
-            int number = 0;
-
-            foreach (var permission in permissions)
-            {
-                number += 1 << permission.BitPosition;
-            }
-
-            return number;
         }
     }
 }

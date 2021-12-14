@@ -145,6 +145,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnClearParameters.TabIndex = 10;
             this.btnClearParameters.Text = "Clear Parameters";
             this.btnClearParameters.UseVisualStyleBackColor = false;
+            this.btnClearParameters.Click += new System.EventHandler(this.btnClearParameters_Click);
             // 
             // tableLayoutPanel1
             // 

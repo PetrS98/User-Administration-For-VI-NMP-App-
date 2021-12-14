@@ -74,6 +74,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnDelete.TabIndex = 46;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button1
             // 
@@ -117,6 +118,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.Name = "DeleteUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Users";
+            this.VisibleChanged += new System.EventHandler(this.DeleteUsers_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

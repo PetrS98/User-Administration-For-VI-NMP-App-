@@ -96,7 +96,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 return;
             }
 
-            if(mySQLDatabase.ConnectToDatabase(iabServerIp.IPAddress, tbUserName.Text, tbPassword.Text))
+            if(mySQLDatabase.ConnectToDB(iabServerIp.IPAddress, tbUserName.Text, tbPassword.Text))
             {
                 SetEnableControls(false);
                 tbPassword.Text = "";
@@ -105,7 +105,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
 
         private void btnDisconnect_Click(object sender, EventArgs e)
         {
-            mySQLDatabase.DisconnectFromDatabase();
+            mySQLDatabase.DisconnectFromDB();
 
             SetEnableControls(true);
             tbUserName.Text = "";

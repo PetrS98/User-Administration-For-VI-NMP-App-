@@ -78,10 +78,22 @@ namespace User_Administration__For_VI_NMP_App_.UserControls
             listBox.Items.Add(permission.Name);
         }
 
-        private void RemovePermission(Permission permission, List<Permission> list, ListBox listBox)
+        private void RemovePermission(Permission permissionToRemove, List<Permission> list, ListBox listBox)
         {
-            list.Remove(permission);
-            listBox.Items.Remove(permission.Name);
+            Permission existingPermission = null;
+
+            foreach (var permission in list)
+            {
+                if(permission.BitPosition == permissionToRemove.BitPosition)
+                {
+                    existingPermission = permission;
+                }
+            }
+
+            if (existingPermission is null) return;
+
+            list.Remove(existingPermission);
+            listBox.Items.Remove(existingPermission.Name);
         }
 
         public void LoadPermissions(List<Permission> PermmisionsForLoad)
