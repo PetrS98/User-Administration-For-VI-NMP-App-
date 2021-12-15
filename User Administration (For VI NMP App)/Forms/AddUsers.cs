@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using User_Administration__For_VI_NMP_App_.Classes;
-using User_Administration__For_VI_NMP_App_.Forms;
 using User_Administration__For_VI_NMP_App_.Forms.MessageBoxes;
 using VisualInspection.Utils.Net;
 
@@ -16,12 +10,8 @@ namespace User_Administration__For_VI_NMP_App_.Forms
     {
         MySQLDatabase mySQLDatabase;
 
-        private string[] Error_1 = new string[2];
-        private string[] Error_2 = new string[2];
-        private string[] Error_3 = new string[2];
-        private string[] Error_4 = new string[2];
-        private string[] Error_5 = new string[2];
-        private string[] Error_6 = new string[2];
+        string ErrorTitle;
+        private string[] Errors = new string[6];
 
         public AddUsers(MySQLDatabase MySQLDatabase)
         {
@@ -52,18 +42,13 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 //*****************************Erory*********************************
                 //-------------------------------------------------------------------
 
-                Error_1[0] = "Chyba Uživatelsého Vstupu";
-                Error_1[1] = "Osobní číslo musí být číslo!!!";
-                Error_2[0] = "Chyba Uživatelsého Vstupu";
-                Error_2[1] = "Jméno může obsahovat pouze písmena. např. Jan, Jana";
-                Error_3[0] = "Chyba Uživatelsého Vstupu";
-                Error_3[1] = "Příjmení může obsahovat pouze písmena. např. Novák, Nováková";
-                Error_4[0] = "Chyba Uživatelsého Vstupu";
-                Error_4[1] = "Heslo musí být zadané!!!";
-                Error_5[0] = "Chyba Uživatelsého Vstupu";
-                Error_5[1] = "Heslo se musí shodovat s ověřovacím heslem!!!";
-                Error_6[0] = "Chyba Uživatelsého Vstupu";
-                Error_6[1] = "Oprávnění uživatele musí být vyplněné!!!";
+                ErrorTitle = "Chyba Uživatelsého Vstupu";
+                Errors[0] = "Osobní číslo musí být číslo!!!";
+                Errors[1] = "Jméno může obsahovat pouze písmena. např. Jan, Jana";
+                Errors[2] = "Příjmení může obsahovat pouze písmena. např. Novák, Nováková";
+                Errors[3] = "Heslo musí být zadané!!!";
+                Errors[4] = "Heslo se musí shodovat s ověřovacím heslem!!!";
+                Errors[5] = "Oprávnění uživatele musí být vyplněné!!!";
 
             }
             else if (Translator.Language == Language.ENG)
@@ -84,20 +69,20 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 //*****************************Errors********************************
                 //-------------------------------------------------------------------
 
-                Error_1[0] = "User Input Error";
-                Error_1[1] = "Personal number must be number!!!";
-                Error_2[0] = "User Input Error";
-                Error_2[1] = "First name must contain only letters. e.g. John, Jane";
-                Error_3[0] = "User Input Error";
-                Error_3[1] = "Last name must contain only letters. e.g. Doe";
-                Error_4[0] = "User Input Error";
-                Error_4[1] = "Password must not be empty!!!";
-                Error_5[0] = "User Input Error";
-                Error_5[1] = "Password and confirm password must be same!!!";
-                Error_6[0] = "User Input Error";
-                Error_6[1] = "User permission must not be empty!!!";
+                ErrorTitle = "User Input Error";
+                Errors[0] = "Personal number must be number!!!";
+                Errors[1] = "First name must contain only letters. e.g. John, Jane";
+                Errors[2] = "Last name must contain only letters. e.g. Doe";
+                Errors[3] = "Password must not be empty!!!";
+                Errors[4] = "Password and confirm password must be same!!!";
+                Errors[5] = "User permission must not be empty!!!";
 
             }
+        }
+
+        private void AddUsers_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadPermissions();
         }
 
         private void btnAddToDatabase_Click(object sender, EventArgs e)
@@ -116,36 +101,48 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             LoadPermissions();
         }
 
+        private void btnClearParameters_Click(object sender, EventArgs e)
+        {
+            ClearParam();
+            perPick.Reset();
+            LoadPermissions();
+        }
+
+        private void LoadPermissions()
+        {
+            if (Visible && mySQLDatabase.Status == ClientStatus.Connected) perPick.InitializePermissions(mySQLDatabase.ReadPermissionList());
+        }
+
         private bool CheckInputInfo()
         {
-            if(TextBoxHelper.TbInputIsNumber(tbPersonalID) == false)
+            if (TextBoxHelper.TbInputIsNumber(tbPersonalID) == false)
             {
-                CustomMessageBox.ShowPopup(Error_1[0], Error_1[1]);
+                CustomMessageBox.ShowPopup(ErrorTitle, Errors[0]);
                 return false;
             }
-            if(TextBoxHelper.TbInputIsText(tbFirstName) == false)
+            if (TextBoxHelper.TbInputIsText(tbFirstName) == false)
             {
-                CustomMessageBox.ShowPopup(Error_2[0], Error_2[1]);
+                CustomMessageBox.ShowPopup(ErrorTitle, Errors[1]);
                 return false;
             }
-            if(TextBoxHelper.TbInputIsText(tbLastName) == false)
+            if (TextBoxHelper.TbInputIsText(tbLastName) == false)
             {
-                CustomMessageBox.ShowPopup(Error_3[0], Error_3[1]);
+                CustomMessageBox.ShowPopup(ErrorTitle, Errors[2]);
                 return false;
             }
-            if(tbPassword.Text == null || tbPassword.Text == "")
+            if (tbPassword.Text == null || tbPassword.Text == "")
             {
-                CustomMessageBox.ShowPopup(Error_4[0], Error_4[1]);
+                CustomMessageBox.ShowPopup(ErrorTitle, Errors[3]);
                 return false;
             }
-            if(tbPassword.Text != tbConfirmPassword.Text)
+            if (tbPassword.Text != tbConfirmPassword.Text)
             {
-                CustomMessageBox.ShowPopup(Error_5[0], Error_5[1]);
+                CustomMessageBox.ShowPopup(ErrorTitle, Errors[4]);
                 return false;
             }
-            if(perPick.GetPickedPermissions().Count == 0)
+            if (perPick.GetPickedPermissions().Count == 0)
             {
-                CustomMessageBox.ShowPopup(Error_6[0], Error_6[1]);
+                CustomMessageBox.ShowPopup(ErrorTitle, Errors[5]);
                 return false;
             }
             return true;
@@ -158,23 +155,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             tbLastName.Text = "";
             tbPassword.Text = "";
             tbConfirmPassword.Text = "";
-        }
-
-        private void LoadPermissions()
-        {
-            if (Visible && mySQLDatabase.Status == ClientStatus.Connected) perPick.InitializePermissions(mySQLDatabase.ReadPermissionList());
-        }
-
-        private void AddUsers_VisibleChanged(object sender, EventArgs e)
-        {
-            LoadPermissions();
-        }
-
-        private void btnClearParameters_Click(object sender, EventArgs e)
-        {
-            ClearParam();
-            perPick.Reset();
-            LoadPermissions();
         }
     }
 }

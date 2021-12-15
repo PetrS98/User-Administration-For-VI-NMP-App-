@@ -29,6 +29,7 @@ namespace User_Administration__For_VI_NMP_App_
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnConnectToDatabase = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@ namespace User_Administration__For_VI_NMP_App_
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.p0 = new System.Windows.Forms.Panel();
             this.p3 = new System.Windows.Forms.Panel();
+            this.btnAboutApp = new System.Windows.Forms.Button();
             this.p2 = new System.Windows.Forms.Panel();
             this.p1 = new System.Windows.Forms.Panel();
             this.pagePanel = new System.Windows.Forms.Panel();
@@ -46,7 +48,6 @@ namespace User_Administration__For_VI_NMP_App_
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbIcon = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnAboutApp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguage)).BeginInit();
             this.p0.SuspendLayout();
@@ -178,6 +179,24 @@ namespace User_Administration__For_VI_NMP_App_
             this.p3.Size = new System.Drawing.Size(295, 733);
             this.p3.TabIndex = 8;
             // 
+            // btnAboutApp
+            // 
+            this.btnAboutApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAboutApp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAboutApp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAboutApp.FlatAppearance.BorderSize = 0;
+            this.btnAboutApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btnAboutApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAboutApp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAboutApp.ForeColor = System.Drawing.Color.White;
+            this.btnAboutApp.Location = new System.Drawing.Point(0, 672);
+            this.btnAboutApp.Name = "btnAboutApp";
+            this.btnAboutApp.Size = new System.Drawing.Size(295, 61);
+            this.btnAboutApp.TabIndex = 6;
+            this.btnAboutApp.Text = "About App";
+            this.btnAboutApp.UseVisualStyleBackColor = false;
+            this.btnAboutApp.Click += new System.EventHandler(this.btnAboutApp_Click);
+            // 
             // p2
             // 
             this.p2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -257,10 +276,10 @@ namespace User_Administration__For_VI_NMP_App_
             // 
             // pbIcon
             // 
-            this.pbIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbIcon.Location = new System.Drawing.Point(0, 0);
+            this.pbIcon.Image = global::User_Administration__For_VI_NMP_App_.Properties.Resources._2760214;
+            this.pbIcon.Location = new System.Drawing.Point(6, 6);
             this.pbIcon.Name = "pbIcon";
-            this.pbIcon.Size = new System.Drawing.Size(41, 35);
+            this.pbIcon.Size = new System.Drawing.Size(27, 22);
             this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbIcon.TabIndex = 0;
             this.pbIcon.TabStop = false;
@@ -287,24 +306,6 @@ namespace User_Administration__For_VI_NMP_App_
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnAboutApp
-            // 
-            this.btnAboutApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAboutApp.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAboutApp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAboutApp.FlatAppearance.BorderSize = 0;
-            this.btnAboutApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnAboutApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAboutApp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAboutApp.ForeColor = System.Drawing.Color.White;
-            this.btnAboutApp.Location = new System.Drawing.Point(0, 672);
-            this.btnAboutApp.Name = "btnAboutApp";
-            this.btnAboutApp.Size = new System.Drawing.Size(295, 61);
-            this.btnAboutApp.TabIndex = 6;
-            this.btnAboutApp.Text = "About App";
-            this.btnAboutApp.UseVisualStyleBackColor = false;
-            this.btnAboutApp.Click += new System.EventHandler(this.btnAboutApp_Click);
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -315,6 +316,7 @@ namespace User_Administration__For_VI_NMP_App_
             this.Controls.Add(this.p0);
             this.Controls.Add(this.pMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

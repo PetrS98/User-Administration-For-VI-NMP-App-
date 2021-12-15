@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using User_Administration__For_VI_NMP_App_.Classes;
-using User_Administration__For_VI_NMP_App_.Forms;
 using User_Administration__For_VI_NMP_App_.Forms.MessageBoxes;
 using VisualInspection.Utils.Net;
 
@@ -18,12 +12,9 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         UserInformations UserInformations;
         UserInformations OldUserInformations;
 
-        private string[] Error_1 = new string[2];
-        private string[] Error_2 = new string[2];
-        private string[] Error_3 = new string[2];
-        private string[] Error_4 = new string[2];
-        private string[] Error_5 = new string[2];
-        private string[] Error_6 = new string[2];
+        private string InputErrorTitle;
+        private string ErrorTitle;
+        private string[] Errors = new string[7];
 
         public EditUsers(MySQLDatabase MySQLDatabase)
         {
@@ -44,6 +35,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 //*************************Texty Obrazovky***************************
                 //-------------------------------------------------------------------
 
+                lblTextUserList.Text =          "Seznam Uživatelů";
                 lblTextPersonalID.Text =        "Osobní Číslo";
                 lblTextFirstName.Text =         "Jméno";
                 lblTextLastName.Text =          "Příjmení";
@@ -58,18 +50,15 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 //*****************************Erory*********************************
                 //-------------------------------------------------------------------
 
-                Error_1[0] = "Chyba Uživatelsého Vstupu";
-                Error_1[1] = "Osobní číslo musí být číslo!!!";
-                Error_2[0] = "Chyba Uživatelsého Vstupu";
-                Error_2[1] = "Jméno může obsahovat pouze písmena. např. Jan, Jana";
-                Error_3[0] = "Chyba Uživatelsého Vstupu";
-                Error_3[1] = "Příjmení může obsahovat pouze písmena. např. Novák, Nováková";
-                Error_4[0] = "Chyba Uživatelsého Vstupu";
-                Error_4[1] = "Heslo musí být zadané!!!";
-                Error_5[0] = "Chyba Uživatelsého Vstupu";
-                Error_5[1] = "Heslo se musí shodovat s ověřovacím heslem!!!";
-                Error_6[0] = "Chyba Uživatelsého Vstupu";
-                Error_6[1] = "Oprávnění uživatele musí být vyplněné!!!";
+                InputErrorTitle = "Chyba Uživatelsého Vstupu";
+                ErrorTitle = "Chyba";
+                Errors[0] = "Osobní číslo musí být číslo!!!";
+                Errors[1] = "Jméno může obsahovat pouze písmena. např. Jan, Jana";
+                Errors[2] = "Příjmení může obsahovat pouze písmena. např. Novák, Nováková";
+                Errors[3] = "Heslo musí být zadané!!!";
+                Errors[4] = "Heslo se musí shodovat s ověřovacím heslem!!!";
+                Errors[5] = "Oprávnění uživatele musí být vyplněné!!!";
+                Errors[6] = "Osobní číslo nemá správný formát.";
 
             }
             else if (Translator.Language == Language.ENG)
@@ -78,6 +67,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 //***************************Form Texts******************************
                 //-------------------------------------------------------------------
 
+                lblTextUserList.Text =          "Users List";
                 lblTextPersonalID.Text =        "Personal ID";
                 lblTextFirstName.Text =         "First Name";
                 lblTextLastName.Text =          "Last Name";
@@ -92,19 +82,15 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 //*****************************Errors********************************
                 //-------------------------------------------------------------------
 
-                Error_1[0] = "User Input Error";
-                Error_1[1] = "Personal number must be number!!!";
-                Error_2[0] = "User Input Error";
-                Error_2[1] = "First name must contain only letters. e.g. John, Jane";
-                Error_3[0] = "User Input Error";
-                Error_3[1] = "Last name must contain only letters. e.g. Doe";
-                Error_4[0] = "User Input Error";
-                Error_4[1] = "Password must not be empty!!!";
-                Error_5[0] = "User Input Error";
-                Error_5[1] = "Password and confirm password must be same!!!";
-                Error_6[0] = "User Input Error";
-                Error_6[1] = "User permission must not be empty!!!";
-
+                InputErrorTitle = "User Input Error";
+                ErrorTitle = "Error";
+                Errors[0] = "Personal number must be number!!!";
+                Errors[1] = "First name must contain only letters. e.g. John, Jane";
+                Errors[2] = "Last name must contain only letters. e.g. Doe";
+                Errors[3] = "Password must not be empty!!!";
+                Errors[4] = "Password and confirm password must be same!!!";
+                Errors[5] = "User permission must not be empty!!!";
+                Errors[6] = "Personal ID is in a wrong format.";
             }
         }
 
@@ -133,6 +119,12 @@ namespace User_Administration__For_VI_NMP_App_.Forms
 
             string[] IDAndName = lbUsersList.SelectedItem.ToString().Split(" | ");
 
+            if (StringHelper.CheckIfTextIsNumber(IDAndName[0]) == false)
+            {
+                CustomMessageBox.ShowPopup(ErrorTitle, Errors[6]);
+                return;
+            }
+
             UserInformations = mySQLDatabase.ReadUserInformation(int.Parse(IDAndName[0]));
 
             tbPersonalID.Text = UserInformations.NameAndID.ID.ToString();
@@ -148,6 +140,84 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         {
             if (rdbNewPassword.Checked == false && rdbOldPassword.Checked) EnablePassword(false);
             else EnablePassword(true);
+        }
+
+        private void btnSaveUser_Click(object sender, EventArgs e)
+        {
+            if (CheckInputInfo() == false) return;
+
+            UserNameAndID userNameAndID = new UserNameAndID(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text);
+            string password;
+
+            if (rdbNewPassword.Checked)
+            {
+                password = PasswordHasher.HashPassword(tbPassword.Text);
+            }
+            else
+            {
+                password = OldUserInformations.Password;
+            }
+
+            UserInformations = new UserInformations(userNameAndID, password, perPick.GetPickedPermissions());
+
+            mySQLDatabase.UpdateUserInformations(UserInformations, OldUserInformations);
+
+            LoadUsersAndPermissions();
+            ClearParam();
+            perPick.Reset();
+        }
+
+        private void LoadUsersAndPermissions()
+        {
+            if (Visible && mySQLDatabase.Status == ClientStatus.Connected)
+            {
+                lbUsersList.Items.Clear();
+
+                perPick.InitializePermissions(mySQLDatabase.ReadPermissionList());
+
+                foreach (var UserName in mySQLDatabase.ReadNamesAndIDs())
+                {
+                    lbUsersList.Items.Add(UserName.ID.ToString() + " | " + UserName.FirstName + " " + UserName.LastName);
+                }
+            }
+        }
+
+        private bool CheckInputInfo()
+        {
+            if (TextBoxHelper.TbInputIsNumber(tbPersonalID) == false)
+            {
+                CustomMessageBox.ShowPopup(InputErrorTitle, Errors[0]);
+                return false;
+            }
+            if (TextBoxHelper.TbInputIsText(tbFirstName) == false)
+            {
+                CustomMessageBox.ShowPopup(InputErrorTitle, Errors[1]);
+                return false;
+            }
+            if (TextBoxHelper.TbInputIsText(tbLastName) == false)
+            {
+                CustomMessageBox.ShowPopup(InputErrorTitle, Errors[2]);
+                return false;
+            }
+            if (rdbNewPassword.Checked)
+            {
+                if (tbPassword.Text == null || tbPassword.Text == "")
+                {
+                    CustomMessageBox.ShowPopup(InputErrorTitle, Errors[3]);
+                    return false;
+                }
+                if (tbPassword.Text != tbConfirmPassword.Text)
+                {
+                    CustomMessageBox.ShowPopup(InputErrorTitle, Errors[4]);
+                    return false;
+                }
+            }
+            if (perPick.GetPickedPermissions().Count == 0)
+            {
+                CustomMessageBox.ShowPopup(InputErrorTitle, Errors[5]);
+                return false;
+            }
+            return true;
         }
 
         private void EnablePassword(bool Enable)
@@ -177,84 +247,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             tbConfirmPassword.Text = "";
             UserInformations = null;
             OldUserInformations = null;
-        }
-
-        private void LoadUsersAndPermissions()
-        {
-            if (Visible && mySQLDatabase.Status == ClientStatus.Connected)
-            {
-                lbUsersList.Items.Clear();
-
-                perPick.InitializePermissions(mySQLDatabase.ReadPermissionList());
-
-                foreach (var UserName in mySQLDatabase.ReadNamesAndIDs())
-                {
-                    lbUsersList.Items.Add(UserName.ID.ToString() + " | " + UserName.FirstName + " " + UserName.LastName);
-                }
-            }
-        }
-
-        private void btnSaveUser_Click(object sender, EventArgs e)
-        {
-            if (CheckInputInfo() == false) return;
-
-            UserNameAndID userNameAndID = new UserNameAndID(int.Parse(tbPersonalID.Text), tbFirstName.Text, tbLastName.Text);
-            string password;
-
-            if (rdbNewPassword.Checked)
-            {
-                password = PasswordHasher.HashPassword(tbPassword.Text);
-            }
-            else
-            {
-                password = OldUserInformations.Password;
-            }
-
-            UserInformations = new UserInformations(userNameAndID, password, perPick.GetPickedPermissions());
-
-            mySQLDatabase.UpdateUserInformations(UserInformations, OldUserInformations);
-
-            LoadUsersAndPermissions();
-            ClearParam();
-            perPick.Reset();
-        }
-
-        private bool CheckInputInfo()
-        {
-            if (TextBoxHelper.TbInputIsNumber(tbPersonalID) == false)
-            {
-                CustomMessageBox.ShowPopup(Error_1[0], Error_1[1]);
-                return false;
-            }
-            if (TextBoxHelper.TbInputIsText(tbFirstName) == false)
-            {
-                CustomMessageBox.ShowPopup(Error_2[0], Error_2[1]);
-                return false;
-            }
-            if (TextBoxHelper.TbInputIsText(tbLastName) == false)
-            {
-                CustomMessageBox.ShowPopup(Error_3[0], Error_3[1]);
-                return false;
-            }
-            if (rdbNewPassword.Checked)
-            {
-                if (tbPassword.Text == null || tbPassword.Text == "")
-                {
-                    CustomMessageBox.ShowPopup(Error_4[0], Error_4[1]);
-                    return false;
-                }
-                if (tbPassword.Text != tbConfirmPassword.Text)
-                {
-                    CustomMessageBox.ShowPopup(Error_5[0], Error_5[1]);
-                    return false;
-                }
-            }
-            if (perPick.GetPickedPermissions().Count == 0)
-            {
-                CustomMessageBox.ShowPopup(Error_6[0], Error_6[1]);
-                return false;
-            }
-            return true;
         }
     }
 }

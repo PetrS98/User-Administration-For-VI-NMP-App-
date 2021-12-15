@@ -209,6 +209,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.tbPassword.ForeColor = System.Drawing.Color.White;
             this.tbPassword.Location = new System.Drawing.Point(3, 213);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(411, 20);
             this.tbPassword.TabIndex = 11;
             // 
@@ -220,6 +221,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.tbConfirmPassword.ForeColor = System.Drawing.Color.White;
             this.tbConfirmPassword.Location = new System.Drawing.Point(3, 273);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.PasswordChar = '*';
             this.tbConfirmPassword.Size = new System.Drawing.Size(411, 20);
             this.tbConfirmPassword.TabIndex = 12;
             // 

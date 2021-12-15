@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using User_Administration__For_VI_NMP_App_.Forms.MessageBoxes;
 
@@ -13,9 +8,8 @@ namespace User_Administration__For_VI_NMP_App_.Classes
     {
         MySQLDatabase mySQLDatabase;
 
-        private string[] Error_1 = new string[2];
-        private string[] Error_2 = new string[2];
-        private string[] Error_3 = new string[2];
+        private string InputErrorTitle;
+        private string[] Errors = new string[2];
 
         public ConnectToDatabase(MySQLDatabase MySQLDatabase)
         {
@@ -46,12 +40,9 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 //*****************************Erory*********************************
                 //-------------------------------------------------------------------
 
-                Error_1[0] =    "Chyba Vstupu";
-                Error_1[1] =    "Ip adresa není ve správném tvaru. (např. 192.168.110.120)";
-                Error_2[0] =    "Chyba Vstupu";
-                Error_2[1] =    "Uživatelské jméno nesmí být prázdné!!!";
-                Error_3[0] =    "Chyba Vstupu";
-                Error_3[1] =    "Heslo nesmí být prázdné!!!";
+                InputErrorTitle =    "Chyba Vstupu";
+                Errors[0] =     "Ip adresa není ve správném tvaru. (např. 192.168.110.120)";
+                Errors[1] =     "Uživatelské jméno nesmí být prázdné!!!";
 
             }
             else if (Translator.Language == Language.ENG)
@@ -71,32 +62,18 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 //*****************************Errors********************************
                 //-------------------------------------------------------------------
 
-                Error_1[0] =    "Input Error";
-                Error_1[1] =    "Ip address is not in correct format. (e.g 192.168.110.120)";
-                Error_2[0] =    "Input Error";
-                Error_2[1] =    "User name must not be empty!!!";
-                Error_3[0] =    "Input Error";
-                Error_3[1] =    "Password must not be empty!!!";
+                InputErrorTitle =    "Input Error";
+                Errors[0] =     "Ip address is not in correct format. (e.g 192.168.110.120)";
+                Errors[1] =     "User name must not be empty!!!";
 
             }
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            if(iabServerIp.IPAddressValid == false)
-            {
-                iabServerIp.Blink();
-                CustomMessageBox.ShowPopup(Error_1[0], Error_1[1]);
-                return;
-            }
+            if (CheckInputInfo() == false) return;
 
-            if(tbUserName.Text == null || tbUserName.Text == "")
-            {
-                CustomMessageBox.ShowPopup(Error_2[0], Error_2[1]);
-                return;
-            }
-
-            if(mySQLDatabase.ConnectToDB(iabServerIp.IPAddress, tbUserName.Text, tbPassword.Text))
+            if (mySQLDatabase.ConnectToDB(iabServerIp.IPAddress, tbUserName.Text, tbPassword.Text))
             {
                 SetEnableControls(false);
                 tbPassword.Text = "";
@@ -109,6 +86,24 @@ namespace User_Administration__For_VI_NMP_App_.Classes
 
             SetEnableControls(true);
             tbUserName.Text = "";
+        }
+
+        private bool CheckInputInfo()
+        {
+            if (iabServerIp.IPAddressValid == false)
+            {
+                iabServerIp.Blink();
+                CustomMessageBox.ShowPopup(InputErrorTitle, Errors[0]);
+                return false;
+            }
+
+            if (tbUserName.Text == null || tbUserName.Text == "")
+            {
+                CustomMessageBox.ShowPopup(InputErrorTitle, Errors[1]);
+                return false;
+            }
+
+            return true;
         }
 
         private void SetEnableControls(bool Enable)

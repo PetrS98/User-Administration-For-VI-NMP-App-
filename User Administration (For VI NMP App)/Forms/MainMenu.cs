@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using User_Administration__For_VI_NMP_App_.Classes;
 using User_Administration__For_VI_NMP_App_.Forms;
-using User_Administration__For_VI_NMP_App_.Forms.MessageBoxes;
 
 namespace User_Administration__For_VI_NMP_App_
 {
@@ -196,7 +189,5 @@ namespace User_Administration__For_VI_NMP_App_
         {
             mouseDown = false;
         }
-
-
     }
 }

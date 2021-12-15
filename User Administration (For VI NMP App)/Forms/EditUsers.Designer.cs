@@ -35,7 +35,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lblTextUserList = new System.Windows.Forms.Label();
             this.tbSearchUser = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.perPick = new User_Administration__For_VI_NMP_App_.UserControls.PermissionPicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTextPersonalID = new System.Windows.Forms.Label();
             this.lblTextFirstName = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lblTextConfirmPassword = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lblTextPassword = new System.Windows.Forms.Label();
+            this.perPick = new User_Administration__For_VI_NMP_App_.UserControls.PermissionPicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +74,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnClearParameters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearParameters.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearParameters.ForeColor = System.Drawing.Color.White;
-            this.btnClearParameters.Location = new System.Drawing.Point(241, 909);
+            this.btnClearParameters.Location = new System.Drawing.Point(10, 909);
             this.btnClearParameters.Name = "btnClearParameters";
             this.btnClearParameters.Size = new System.Drawing.Size(185, 50);
             this.btnClearParameters.TabIndex = 35;
@@ -90,7 +90,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnSaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUser.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUser.ForeColor = System.Drawing.Color.White;
-            this.btnSaveUser.Location = new System.Drawing.Point(10, 909);
+            this.btnSaveUser.Location = new System.Drawing.Point(241, 909);
             this.btnSaveUser.Name = "btnSaveUser";
             this.btnSaveUser.Size = new System.Drawing.Size(185, 50);
             this.btnSaveUser.TabIndex = 34;
@@ -135,14 +135,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnSearch.Text = "🔍";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // perPick
-            // 
-            this.perPick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.perPick.Location = new System.Drawing.Point(7, 692);
-            this.perPick.Name = "perPick";
-            this.perPick.Size = new System.Drawing.Size(425, 215);
-            this.perPick.TabIndex = 46;
             // 
             // tableLayoutPanel1
             // 
@@ -326,14 +318,22 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lblTextPassword.TabIndex = 9;
             this.lblTextPassword.Text = "Password";
             // 
+            // perPick
+            // 
+            this.perPick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.perPick.Location = new System.Drawing.Point(6, 692);
+            this.perPick.Name = "perPick";
+            this.perPick.Size = new System.Drawing.Size(425, 215);
+            this.perPick.TabIndex = 48;
+            // 
             // EditUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(440, 971);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.perPick);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.tbSearchUser);
             this.Controls.Add(this.lblTextUserList);

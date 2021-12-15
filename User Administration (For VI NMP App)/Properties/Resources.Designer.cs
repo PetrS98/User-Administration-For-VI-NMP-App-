@@ -63,6 +63,26 @@ namespace User_Administration__For_VI_NMP_App_.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1991986 {
+            get {
+                object obj = ResourceManager.GetObject("1991986", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2760214 {
+            get {
+                object obj = ResourceManager.GetObject("2760214", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cz {
             get {
                 object obj = ResourceManager.GetObject("cz", resourceCulture);

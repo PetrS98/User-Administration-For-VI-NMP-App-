@@ -38,6 +38,11 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             mouseDown = false;
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         public static void ShowPopup(string Title, string Message)
         {
             var messagebox = new CustomMessageBox();
@@ -46,11 +51,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms.MessageBoxes
             messagebox.lblInfoText.Text = Message;
 
             messagebox.Show();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

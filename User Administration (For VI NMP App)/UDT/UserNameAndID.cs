@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace User_Administration__For_VI_NMP_App_.Classes
+﻿namespace User_Administration__For_VI_NMP_App_.Classes
 {
     public class UserNameAndID
     {
