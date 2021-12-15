@@ -131,7 +131,7 @@ namespace User_Administration__For_VI_NMP_App_.UserControls
         {
             if (Translator.Language == Language.CZ)
             {
-                lblTextPermissionsList.Text = "Seznam Opravnění";
+                lblTextPermissionsList.Text = "Seznam Oprávnění";
                 lblTextUserPermissions.Text = "Oprávnění Uživatele";
             }
             else if (Translator.Language == Language.ENG)

@@ -43,7 +43,11 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
             this.perPick = new User_Administration__For_VI_NMP_App_.UserControls.PermissionPicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTextPersonalID
@@ -123,7 +127,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnAddToDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToDatabase.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddToDatabase.ForeColor = System.Drawing.Color.White;
-            this.btnAddToDatabase.Location = new System.Drawing.Point(244, 540);
+            this.btnAddToDatabase.Location = new System.Drawing.Point(232, 525);
             this.btnAddToDatabase.Name = "btnAddToDatabase";
             this.btnAddToDatabase.Size = new System.Drawing.Size(185, 50);
             this.btnAddToDatabase.TabIndex = 9;
@@ -139,7 +143,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnClearParameters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearParameters.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearParameters.ForeColor = System.Drawing.Color.White;
-            this.btnClearParameters.Location = new System.Drawing.Point(13, 540);
+            this.btnClearParameters.Location = new System.Drawing.Point(1, 525);
             this.btnClearParameters.Name = "btnClearParameters";
             this.btnClearParameters.Size = new System.Drawing.Size(185, 50);
             this.btnClearParameters.TabIndex = 10;
@@ -161,7 +165,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.tableLayoutPanel1.Controls.Add(this.lblTextConfirmPassword, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.tbPassword, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.tbConfirmPassword, 0, 9);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -228,21 +232,43 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             // perPick
             // 
             this.perPick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.perPick.Location = new System.Drawing.Point(10, 325);
+            this.perPick.Location = new System.Drawing.Point(-2, 310);
             this.perPick.Name = "perPick";
             this.perPick.Size = new System.Drawing.Size(425, 215);
             this.perPick.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.btnAddToDatabase);
+            this.panel1.Controls.Add(this.perPick);
+            this.panel1.Controls.Add(this.btnClearParameters);
+            this.panel1.Location = new System.Drawing.Point(19, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(417, 578);
+            this.panel1.TabIndex = 19;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(455, 589);
+            this.tableLayoutPanel2.TabIndex = 20;
             // 
             // AddUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(455, 602);
-            this.Controls.Add(this.btnAddToDatabase);
-            this.Controls.Add(this.btnClearParameters);
-            this.Controls.Add(this.perPick);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(455, 976);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "AddUsers";
@@ -251,6 +277,8 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.VisibleChanged += new System.EventHandler(this.AddUsers_VisibleChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -270,5 +298,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbConfirmPassword;
         private UserControls.PermissionPicker perPick;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

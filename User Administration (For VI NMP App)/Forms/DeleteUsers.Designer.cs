@@ -32,8 +32,8 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.lblTextUserList = new System.Windows.Forms.Label();
             this.lbUsersList = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.tbSearchUser = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTextUserList
@@ -76,31 +76,32 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(401, 32);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.button1.Size = new System.Drawing.Size(27, 23);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "🔍";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(401, 32);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.btnSearch.Size = new System.Drawing.Size(27, 23);
+            this.btnSearch.TabIndex = 48;
+            this.btnSearch.Text = "🔍";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // textBox1
+            // tbSearchUser
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(12, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(383, 23);
-            this.textBox1.TabIndex = 47;
+            this.tbSearchUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbSearchUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSearchUser.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbSearchUser.Location = new System.Drawing.Point(12, 32);
+            this.tbSearchUser.Name = "tbSearchUser";
+            this.tbSearchUser.Size = new System.Drawing.Size(383, 23);
+            this.tbSearchUser.TabIndex = 47;
             // 
             // DeleteUsers
             // 
@@ -108,8 +109,8 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(475, 433);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.tbSearchUser);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblTextUserList);
             this.Controls.Add(this.lbUsersList);
@@ -128,7 +129,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
         private System.Windows.Forms.Label lblTextUserList;
         private System.Windows.Forms.ListBox lbUsersList;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox tbSearchUser;
     }
 }

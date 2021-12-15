@@ -40,7 +40,11 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.clientStatusDot1 = new User_Administration__For_VI_NMP_App_.UserControls.ClientStatusDot();
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -56,7 +60,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.tableLayoutPanel1.Controls.Add(this.tbPassword, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblTextConnectionStatus, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.clientStatusDot1, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -65,7 +69,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(394, 202);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(416, 190);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblTextIpAddress
@@ -74,7 +78,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.lblTextIpAddress.AutoSize = true;
             this.lblTextIpAddress.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTextIpAddress.ForeColor = System.Drawing.Color.White;
-            this.lblTextIpAddress.Location = new System.Drawing.Point(3, 13);
+            this.lblTextIpAddress.Location = new System.Drawing.Point(3, 11);
             this.lblTextIpAddress.Name = "lblTextIpAddress";
             this.lblTextIpAddress.Size = new System.Drawing.Size(133, 20);
             this.lblTextIpAddress.TabIndex = 0;
@@ -88,7 +92,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.iabServerIp.ForeColor = System.Drawing.Color.White;
             this.iabServerIp.IPAddress = "213.129.135.117";
             this.iabServerIp.IPAddressAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.iabServerIp.Location = new System.Drawing.Point(4, 37);
+            this.iabServerIp.Location = new System.Drawing.Point(4, 35);
             this.iabServerIp.Margin = new System.Windows.Forms.Padding(4);
             this.iabServerIp.Name = "iabServerIp";
             this.iabServerIp.Size = new System.Drawing.Size(178, 20);
@@ -101,7 +105,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.lblTextUserName.AutoSize = true;
             this.lblTextUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTextUserName.ForeColor = System.Drawing.Color.White;
-            this.lblTextUserName.Location = new System.Drawing.Point(3, 79);
+            this.lblTextUserName.Location = new System.Drawing.Point(3, 73);
             this.lblTextUserName.Name = "lblTextUserName";
             this.lblTextUserName.Size = new System.Drawing.Size(87, 20);
             this.lblTextUserName.TabIndex = 2;
@@ -113,7 +117,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbUserName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbUserName.ForeColor = System.Drawing.Color.White;
-            this.tbUserName.Location = new System.Drawing.Point(3, 102);
+            this.tbUserName.Location = new System.Drawing.Point(3, 96);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(178, 20);
             this.tbUserName.TabIndex = 3;
@@ -126,7 +130,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.lblTextPassword.AutoSize = true;
             this.lblTextPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTextPassword.ForeColor = System.Drawing.Color.White;
-            this.lblTextPassword.Location = new System.Drawing.Point(3, 145);
+            this.lblTextPassword.Location = new System.Drawing.Point(3, 135);
             this.lblTextPassword.Name = "lblTextPassword";
             this.lblTextPassword.Size = new System.Drawing.Size(76, 20);
             this.lblTextPassword.TabIndex = 4;
@@ -138,7 +142,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbPassword.ForeColor = System.Drawing.Color.White;
-            this.tbPassword.Location = new System.Drawing.Point(3, 168);
+            this.tbPassword.Location = new System.Drawing.Point(3, 158);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(178, 20);
@@ -152,7 +156,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.lblTextConnectionStatus.AutoSize = true;
             this.lblTextConnectionStatus.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTextConnectionStatus.ForeColor = System.Drawing.Color.White;
-            this.lblTextConnectionStatus.Location = new System.Drawing.Point(227, 13);
+            this.lblTextConnectionStatus.Location = new System.Drawing.Point(244, 11);
             this.lblTextConnectionStatus.Name = "lblTextConnectionStatus";
             this.lblTextConnectionStatus.Size = new System.Drawing.Size(136, 20);
             this.lblTextConnectionStatus.TabIndex = 7;
@@ -162,7 +166,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             // 
             this.clientStatusDot1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clientStatusDot1.Client = null;
-            this.clientStatusDot1.Location = new System.Drawing.Point(283, 36);
+            this.clientStatusDot1.Location = new System.Drawing.Point(299, 34);
             this.clientStatusDot1.Name = "clientStatusDot1";
             this.clientStatusDot1.Size = new System.Drawing.Size(25, 25);
             this.clientStatusDot1.Status = VisualInspection.Utils.Net.ClientStatus.Disconnected;
@@ -176,9 +180,9 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConnect.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location = new System.Drawing.Point(12, 220);
+            this.btnConnect.Location = new System.Drawing.Point(0, 196);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(194, 50);
+            this.btnConnect.Size = new System.Drawing.Size(205, 50);
             this.btnConnect.TabIndex = 12;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = false;
@@ -192,28 +196,52 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             this.btnDisconnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisconnect.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDisconnect.ForeColor = System.Drawing.Color.White;
-            this.btnDisconnect.Location = new System.Drawing.Point(212, 220);
+            this.btnDisconnect.Location = new System.Drawing.Point(211, 196);
             this.btnDisconnect.Name = "btnDisconnect";
-            this.btnDisconnect.Size = new System.Drawing.Size(194, 50);
+            this.btnDisconnect.Size = new System.Drawing.Size(205, 50);
             this.btnDisconnect.TabIndex = 11;
             this.btnDisconnect.Text = "Disconnect";
             this.btnDisconnect.UseVisualStyleBackColor = false;
             this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.btnConnect);
+            this.panel1.Controls.Add(this.btnDisconnect);
+            this.panel1.Location = new System.Drawing.Point(19, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(416, 260);
+            this.panel1.TabIndex = 13;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(455, 267);
+            this.tableLayoutPanel2.TabIndex = 14;
             // 
             // ConnectToDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(431, 290);
-            this.Controls.Add(this.btnConnect);
-            this.Controls.Add(this.btnDisconnect);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(455, 976);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConnectToDatabase";
             this.Text = "ConnectToDatabase";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -231,5 +259,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
         public UserControls.ClientStatusDot clientStatusDot1;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnDisconnect;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

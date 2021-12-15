@@ -23,9 +23,9 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             if (Translator.Language == Language.CZ)
             {
                 lblTitle.Text = "Správa Databáze Vizuální Kontroly";
-                lblVersion.Text = "Verze Aplikace: 1.0.0";
+                lblVersion.Text = "Verze Aplikace: 1.1.2";
                 lblRestriction.Text = "Tato aplikace je pouze pro Nexen Tire Czech.";
-                llblCompanyWebsite.Text = "Stránky Společnosti";
+                llblCompanyWebsite.Text = "ODKAZ: Stránky Společnosti";
                 lblCreator.Text = "Vývojář: Petr Staněk";
                 lblEmail.Text = "Email: petr.stanek@nexentire.com";
                 lblTel.Text = "Tel: +420 703 496 310";
@@ -34,9 +34,9 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             else if (Translator.Language == Language.ENG)
             {
                 lblTitle.Text = "Visual Inspection Database Administration";
-                lblVersion.Text = "Application Version: 1.0.0";
+                lblVersion.Text = "Application Version: 1.1.2";
                 lblRestriction.Text = "This application only for Nexen Tire Czech.";
-                llblCompanyWebsite.Text = "Company Website";
+                llblCompanyWebsite.Text = "LINK: Company Website";
                 lblCreator.Text = "Developer: Petr Staněk";
                 lblEmail.Text = "Email: petr.stanek@nexentire.com";
                 lblTel.Text = "Tel: +420 703 496 310";

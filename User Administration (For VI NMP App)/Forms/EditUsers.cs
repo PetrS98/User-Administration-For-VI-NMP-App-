@@ -47,7 +47,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 btnSaveUser.Text =              "Přidat do Databáze";
 
                 //-------------------------------------------------------------------
-                //*****************************Erory*********************************
+                //*****************************Errory*********************************
                 //-------------------------------------------------------------------
 
                 InputErrorTitle = "Chyba Uživatelsého Vstupu";
@@ -101,7 +101,14 @@ namespace User_Administration__For_VI_NMP_App_.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            lbUsersList.SelectedIndex = lbUsersList.FindString(tbSearchUser.Text);
+            for (int i = 0; i < lbUsersList.Items.Count; i++)
+            {
+                if (StringHelper.SearchTextInString(lbUsersList.Items[i].ToString(), tbSearchUser.Text))
+                {
+                    lbUsersList.SelectedIndex = i;
+                    return;
+                }
+            }
         }
 
         private void btnClearParameters_Click(object sender, EventArgs e)
@@ -229,11 +236,13 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             {
                 tbPassword.Cursor = Cursors.IBeam;
                 tbConfirmPassword.Cursor = Cursors.IBeam;
+                tlp1.Visible = true;
             }
             else
             {
                 tbPassword.Cursor = Cursors.No;
                 tbConfirmPassword.Cursor = Cursors.No;
+                tlp1.Visible = false;
             }
         }
 

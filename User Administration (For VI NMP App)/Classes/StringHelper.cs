@@ -19,6 +19,10 @@ namespace User_Administration__For_VI_NMP_App_.Classes
             }
         }
 
+        public static bool SearchTextInString(string Text, string SearchKey) 
+        {
+            return Text.Contains(SearchKey);
+        }
 
     }
 }

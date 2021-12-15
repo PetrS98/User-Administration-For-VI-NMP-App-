@@ -37,10 +37,10 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 btnDisconnect.Text =            "Odpojit";
 
                 //-------------------------------------------------------------------
-                //*****************************Erory*********************************
+                //*****************************Errory*********************************
                 //-------------------------------------------------------------------
 
-                InputErrorTitle =    "Chyba Vstupu";
+                InputErrorTitle = "Chyba Uživatelského Vstupu";
                 Errors[0] =     "Ip adresa není ve správném tvaru. (např. 192.168.110.120)";
                 Errors[1] =     "Uživatelské jméno nesmí být prázdné!!!";
 
@@ -62,7 +62,7 @@ namespace User_Administration__For_VI_NMP_App_.Classes
                 //*****************************Errors********************************
                 //-------------------------------------------------------------------
 
-                InputErrorTitle =    "Input Error";
+                InputErrorTitle =    "User Input Error";
                 Errors[0] =     "Ip address is not in correct format. (e.g 192.168.110.120)";
                 Errors[1] =     "User name must not be empty!!!";
 

@@ -107,6 +107,7 @@ namespace User_Administration__For_VI_NMP_App_
                 btnAddUser.Text =               "Přidání Uživatele";
                 btnEditUser.Text =              "Editace Uživatele";
                 btnDeleteUser.Text =            "Smazání Uživatele";
+                btnAboutApp.Text =              "O Aplikaci";
             }
             else if (Translator.Language == Language.ENG)
             {
@@ -116,6 +117,7 @@ namespace User_Administration__For_VI_NMP_App_
                 btnAddUser.Text =               "Add User";
                 btnEditUser.Text =              "Edit User";
                 btnDeleteUser.Text =            "Delete User";
+                btnAboutApp.Text =              "About App";
             }
         }
 

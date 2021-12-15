@@ -41,7 +41,7 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 Info_1[1] = "Jste si jistý, že chcete vybraného uživatele smazat?";
 
                 //-------------------------------------------------------------------
-                //*****************************Erory*********************************
+                //*****************************Errory*********************************
                 //-------------------------------------------------------------------
 
                 Error_1[0] = "Chyba";
@@ -79,6 +79,18 @@ namespace User_Administration__For_VI_NMP_App_.Forms
             LoadUsers();
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < lbUsersList.Items.Count; i++)
+            {
+                if(StringHelper.SearchTextInString(lbUsersList.Items[i].ToString(), tbSearchUser.Text))
+                {
+                    lbUsersList.SelectedIndex = i;
+                    return;
+                }
+            }
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (lbUsersList.SelectedItem == null || lbUsersList.SelectedItem.ToString() == "") return;
@@ -108,6 +120,6 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                     lbUsersList.Items.Add(UserName.ID.ToString() + " | " + UserName.FirstName + " " + UserName.LastName);
                 }
             }
-        } 
+        }
     }
 }

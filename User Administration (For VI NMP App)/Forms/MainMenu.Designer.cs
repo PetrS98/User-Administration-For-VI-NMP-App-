@@ -63,7 +63,7 @@ namespace User_Administration__For_VI_NMP_App_
             // pbLogo
             // 
             this.pbLogo.Image = global::User_Administration__For_VI_NMP_App_.Properties.Resources.NexenLogo;
-            this.pbLogo.Location = new System.Drawing.Point(19, 8);
+            this.pbLogo.Location = new System.Drawing.Point(17, 8);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(260, 133);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +127,7 @@ namespace User_Administration__For_VI_NMP_App_
             // pbLanguage
             // 
             this.pbLanguage.Image = global::User_Administration__For_VI_NMP_App_.Properties.Resources.cz;
-            this.pbLanguage.Location = new System.Drawing.Point(90, 17);
+            this.pbLanguage.Location = new System.Drawing.Point(97, 17);
             this.pbLanguage.Name = "pbLanguage";
             this.pbLanguage.Size = new System.Drawing.Size(100, 50);
             this.pbLanguage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -39,10 +39,10 @@ namespace User_Administration__For_VI_NMP_App_.Forms
                 btnAddToDatabase.Text =             "Přidat do Databáze";
 
                 //-------------------------------------------------------------------
-                //*****************************Erory*********************************
+                //*****************************Errory*********************************
                 //-------------------------------------------------------------------
 
-                ErrorTitle = "Chyba Uživatelsého Vstupu";
+                ErrorTitle = "Chyba Uživatelského Vstupu";
                 Errors[0] = "Osobní číslo musí být číslo!!!";
                 Errors[1] = "Jméno může obsahovat pouze písmena. např. Jan, Jana";
                 Errors[2] = "Příjmení může obsahovat pouze písmena. např. Novák, Nováková";
